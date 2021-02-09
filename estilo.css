@@ -1,3 +1,5 @@
+/*HEADER*/
+
 .navbar-collapse {
     padding-right: 15px;
     padding-left: 15px;
@@ -14,11 +16,12 @@
 }
 
 .nav-item {
-    margin: 0 10px;
+    margin: 0 19px;
 }
 
 .nav-item p {
     color: black;
+    font-size: 16px;
     font-family: optima;
     display: block;
 }
@@ -53,10 +56,12 @@ li a:hover:not(.active) {
     padding: 8px;
     background-color: inherit;
     font-family: optima;
+    font-size: 16px;
 }
 
 .dropdown {
     font-family: optima;
+    font-size: 16px;
     display: inline-block;
 }
 
@@ -70,13 +75,61 @@ li a:hover:not(.active) {
 
 .dropdown-content a {
     font-family: optima;
+    font-size: 16px;
     color: black;
     padding: 12px 16px;
     text-decoration: none;
     display: inline-block;
-    text-align: left;
 }
 
 .dropdown:hover .dropdown-content {
     display: block;
+}
+
+
+/*LATERAL ESQUERDA*/
+
+.scrollspyLateral {
+    position: relative;
+    overflow: auto;
+    height: 960px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+form.example input[type=text] {
+    padding: 4px;
+    font-size: 16px;
+    border: 1px solid grey;
+    float: left;
+    width: 70%;
+    background: #f1f1f1;
+    position: relative;
+    margin-top: 10px;
+}
+
+form.example button {
+    float: left;
+    width: 15%;
+    padding: 4px;
+    background: #2196F3;
+    color: white;
+    font-size: 16px;
+    border: 1px solid grey;
+    border-left: none;
+    cursor: pointer;
+    position: relative;
+    margin-top: 10px;
+}
+
+form.example button:hover {
+    background: #0b7dda;
+}
+
+form.example::after {
+    content: "";
+    clear: both;
+    display: table;
 }
