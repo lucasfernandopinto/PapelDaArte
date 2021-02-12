@@ -14,15 +14,16 @@
     <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 
-<body class="body">
-    <div class="container-fluid">
-        <div class="row" id="lateralEsquerda">
-            <div class="col-sm-2">
-                <form class="example" action="/action_page.php" style="margin:auto;max-width:300px;">
-                    <input type="text" placeholder="Pesquisar..." name="search2">
-                    <button type="submit"><i class="fa fa-search"></i></button>
+<body>
+    <div class="container-fluid" style="height: 100%;">
+        <div class="row" style="height: 100%;">
+            <div class="col-sm-2" style="height: 100%;">
+                <form class="example" action="/action_page.php" style="margin:auto;width:auto;">
+                    <input type="text" placeholder="Pesquisar..." id="pesquisar">
+                    <button type="submit" id="botaoPesquisar"><i class="fa fa-search"></i></button>
                 </form>
-                <div data-spy="scroll" data-target="lateralEsquerda" data-offset="0" class="scrollspyLateral">
+                <div data-spy="scroll" data-offset="0" class="scrollspyLateral">
+
                     <a class="nav-link" href="#">Artista</a>
                     <a class="nav-link" href="#">Artista</a>
                     <a class="nav-link" href="#">Artista</a>
@@ -53,31 +54,9 @@
 
             </div>
 
-            <div class="col-sm-8">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate lobortis ligula vel accumsan. Etiam non mollis mi. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur dolor nulla, viverra id rutrum interdum,
-                    consectetur sed justo. Vivamus et commodo sapien. Proin vel lectus dui. Nunc eu justo eget tortor venenatis gravida a vitae libero. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Aliquam erat
-                    volutpat. Curabitur lobortis volutpat massa sed venenatis. In in augue tincidunt, bibendum massa ac, sodales arcu. Sed quis mi eget lacus placerat imperdiet id in arcu. Cras maximus tellus vulputate mi ornare, eu rhoncus ipsum pretium.
-                    Quisque non tortor a ex sollicitudin facilisis. Nam gravida, lorem in dictum egestas, dolor ante faucibus mauris, eget varius massa nunc non enim. Duis et tellus at risus consequat convallis. Proin tristique, erat a placerat accumsan,
-                    justo justo porttitor turpis, quis auctor augue nunc ac sapien. Nam convallis condimentum enim sit amet cursus. Nulla non ipsum sagittis metus bibendum ullamcorper. Integer non facilisis orci, a volutpat sapien. In non consectetur
-                    lorem, eget rhoncus dolor. Vivamus justo urna, dignissim at orci eget, sagittis dignissim metus. Duis in mauris ex. Morbi ut quam lacinia nulla varius imperdiet. Maecenas eget imperdiet est. Suspendisse potenti. Nam urna libero, aliquam
-                    sit amet finibus a, finibus suscipit massa. Pellentesque quis aliquam dui, ut consequat massa. In nulla arcu, elementum quis luctus eget, tincidunt at mi. Morbi vel libero velit. Donec facilisis, erat ut lacinia volutpat, sapien justo
-                    vestibulum odio, id mollis orci quam vel lacus. Praesent viverra commodo ullamcorper. Maecenas accumsan nisi elementum tortor eleifend, id ornare sapien egestas. Aliquam ut posuere erat. Cras mollis lorem eu venenatis cursus. Mauris
-                    dapibus consequat orci eget bibendum. Fusce dictum arcu id lectus semper viverra. Maecenas eleifend eget purus eu dictum. Sed in sem eu lorem convallis vulputate. Quisque fermentum, ipsum non mattis condimentum, ligula mauris finibus
-                    erat, ac eleifend dui ligula a enim. Nulla et nulla a magna luctus pellentesque. In nibh nibh, facilisis sed elit consequat, consequat luctus lectus. Donec lectus magna, condimentum sit amet nibh vitae, auctor volutpat velit. Aliquam
-                    placerat ipsum nisi, a commodo metus aliquet lacinia. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vulputate lobortis ligula vel accumsan. Etiam non mollis mi. Interdum et malesuada fames ac ante ipsum primis in faucibus.
-                    Curabitur dolor nulla, viverra id rutrum interdum, consectetur sed justo. Vivamus et commodo sapien. Proin vel lectus dui. Nunc eu justo eget tortor venenatis gravida a vitae libero. Vestibulum ante ipsum primis in faucibus orci luctus
-                    et ultrices posuere cubilia curae; Aliquam erat volutpat. Curabitur lobortis volutpat massa sed venenatis. In in augue tincidunt, bibendum massa ac, sodales arcu. Sed quis mi eget lacus placerat imperdiet id in arcu. Cras maximus tellus
-                    vulputate mi ornare, eu rhoncus ipsum pretium. Quisque non tortor a ex sollicitudin facilisis. Nam gravida, lorem in dictum egestas, dolor ante faucibus mauris, eget varius massa nunc non enim. Duis et tellus at risus consequat convallis.
-                    Proin tristique, erat a placerat accumsan, justo justo porttitor turpis, quis auctor augue nunc ac sapien. Nam convallis condimentum enim sit amet cursus. Nulla non ipsum sagittis metus bibendum ullamcorper. Integer non facilisis orci,
-                    a volutpat sapien. In non consectetur lorem, eget rhoncus dolor. Vivamus justo urna, dignissim at orci eget, sagittis dignissim metus. Duis in mauris ex. Morbi ut quam lacinia nulla varius imperdiet. Maecenas eget imperdiet est. Suspendisse
-                    potenti. Nam urna libero, aliquam sit amet finibus a, finibus suscipit massa. Pellentesque quis aliquam dui, ut consequat massa. In nulla arcu, elementum quis luctus eget, tincidunt at mi. Morbi vel libero velit. Donec facilisis, erat
-                    ut lacinia volutpat, sapien justo vestibulum odio, id mollis orci quam vel lacus. Praesent viverra commodo ullamcorper. Maecenas accumsan nisi elementum tortor eleifend, id ornare sapien egestas. Aliquam ut posuere erat. Cras mollis
-                    lorem eu venenatis cursus. Mauris dapibus consequat orci eget bibendum. Fusce dictum arcu id lectus semper viverra. Maecenas eleifend eget purus eu dictum. Sed in sem eu lorem convallis vulputate. Quisque fermentum, ipsum non mattis
-                    condimentum, ligula mauris finibus erat, ac eleifend dui ligula a enim. Nulla et nulla a magna luctus pellentesque. In nibh nibh, facilisis sed elit consequat, consequat luctus lectus. Donec lectus magna, condimentum sit amet nibh
-                    vitae, auctor volutpat velit. Aliquam placerat ipsum nisi, a commodo metus aliquet lacinia.</p>
-            </div>
         </div>
     </div>
+
 </body>
 
 
