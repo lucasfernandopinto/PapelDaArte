@@ -261,8 +261,8 @@
     
     #footer {
         overflow: hidden;
-        text-align: center;
         color: #627482 !important;
+        display: inline-block;
     }
     
     #footer i {
@@ -271,5 +271,46 @@
     
     #footer i:hover {
         color: black;
+        transition: all 0.5s linear;
+    }
+    
+    #footer a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    #facebook {
+        border: solid 1px #DCDCDC;
+    }
+    
+    #facebook:hover {
+        border-bottom: solid 1px black;
+        transition: all 0.5s linear;
+    }
+    
+    #email {
+        border: solid 1px #DCDCDC;
+    }
+    
+    #email:hover {
+        border-bottom: solid 1px black;
+        transition: all 0.5s linear;
+    }
+    
+    #whatsapp {
+        border: solid 1px #DCDCDC;
+    }
+    
+    #whatsapp:hover {
+        border-bottom: solid 1px black;
+        transition: all 0.5s linear;
+    }
+    
+    #instagram {
+        border: solid 1px #DCDCDC;
+    }
+    
+    #instagram:hover {
+        border-bottom: solid 1px black;
         transition: all 0.5s linear;
     }
