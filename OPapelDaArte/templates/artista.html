@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    {% include "model-head.html" %}
+</head>
+<body>
+    {% include "model-header.html" %}
+    <div class="container-fluid" style="height:80%;">
+        <div class="row h-100">
+            {% include "model-esquerda.html" %}
+            <div class="col-sm-8 h-100 scrollspyLateral" id="corpo" data-spy="scroll" data-offset="0">
+                {% for artistaPrincipal in artistaPrincipal %}
+                    <br>
+                    <h1>{{ artistaPrincipal.art_sobrenome }}, {{ artistaPrincipal.art_nome }} ( {{ artistaPrincipal.art_nascimento }} - {% if artistaPrincipal.art_morte != 0 %}{{ artista.art_morte }}{% endif %})</h1>
+                    <hr>
+                    <div class="row">
+                        <div>
+                            <figure style="float: left; width: 25%; margin-right: 2%;">
+                                <img src="{{ artistaPrincipal.art_imagem }}" style="width: 100%;" alt="Imagem do Artista {{ artistaPrincipal.art_nome }} {{ artistaPrincipal.art_sobrenome }}" >
+                                <figcaption style="text-align: center;"> Descrição bem longa da imagem posicionada abaicxo da imagem </figcaption>
+                            </figure>
+                            <p class="mr-5">{{ artistaPrincipal.art_desc|safe }}</p>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <p>Lorem</p>
+                    </div>
+                    <h4> Obras de {{ artistaPrincipal.art_sobrenome }}:</h4>
+                {% endfor %}
+
+                {% for obras in obras %}
+                    <figure style="text-align: center;">
+                        <img src="{{ obras.obr_img }}" alt="Gravura da obra {{ obras.obr_nome }}" >
+                        <figcaption style="text-align: center;"> {{ obras.obr_legenda|safe }} </figcaption>
+                    </figure>
+
+                    <h5>"{{ obras.obr_nome }}", {{ obras.obr_ano }}</h5>
+                    <div>
+                        {{ obras.obr_info|safe }}
+                    </div>
+                    {% if obras.obr_status == 'A' %}
+                        <h6> R$ {{ obras.obr_valor }} </h6>
+                    {% else %}
+                        <h6> Não Disponível </h6>
+                    {% endif %}
+
+                {% endfor %}
+            </div>
+            {% include "model-direita.html" %}
+        </div>
+    </div>
+    {% include "model-footer.html" %}
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+</body>
+</html>

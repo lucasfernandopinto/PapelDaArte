@@ -5,36 +5,8 @@
         <button type="submit" id="botaoPesquisar"><i class="fa fa-search"></i></button>
     </form>
     <div data-spy="scroll" data-offset="0" class="scrollspyLateral">
-
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
-                    <a class="nav-link" href="#">Artista</a>
+        {% for artistas in artista %}
+                    <a class="nav-link" href="{{ artistas.art_sobrenome }}">{{ artistas.art_sobrenome }}, {{ artistas.art_nome }}</a>
+        {% endfor %}
     </div>
 </div>

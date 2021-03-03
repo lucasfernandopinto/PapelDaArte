@@ -1,9 +1,11 @@
 
 
 <div class="col-sm-2" id="lateralDireita">
-    <img src="https://imgur.com/jx3ZlZJ.jpg" class="img-fluid my-3" id="imgLateral">
-    <a href="#">
-        <h2>Título</h2>
-        <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sagittis a velit sed bibendum. Donec accumsan maximus enim non congue. Aenean id ornare massa. Proin varius pellentesque maximus..."</p>
-    </a>
+    {% for noticia in noticia %}
+    <img src="{{ noticia.not_imagem }}" class="img-fluid my-3" id="imgLateral">
+        <a href="#">
+            <h2>{{ noticia.not_nome }}</h2>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque sagittis a velit sed bibendum. Donec accumsan maximus enim non congue. Aenean id ornare massa. Proin varius pellentesque maximus..."</p>
+        </a>
+    {% endfor %}
 </div>

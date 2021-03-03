@@ -20,6 +20,6 @@ from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', RedirectView.as_view(url='/PapelDaArte/')),
-    path('PapelDaArte/', views.index),
+    path('', views.index),
+    path('<art_sobrenome>', views.artista),
 ]
