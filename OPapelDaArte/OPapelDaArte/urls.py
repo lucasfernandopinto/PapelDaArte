@@ -22,4 +22,12 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
     path('Artistas/<art_sobrenome>', views.artista),
+    path('Julio-Reis', views.julioReis),
+    path('O-Papel-da-Arte', views.oPapelDaArte),
+    path('Historia-da-Gravura', views.hitoriaGravura),
+    path('Tecnicas-de-Impressao', views.tecnicasImpressao),
+    path('Emolduramento-e-Restauracao', views.emolduramento),
+    path('Noticias', views.noticias),
+    path('Artigos', views.artigos),
+    path('Entrevistas', views.entrevistas),
 ]
