@@ -1,48 +1,45 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
+
     {% include "model-head.html" %}
+
 </head>
 <body>
     {% include "model-header.html" %}
+
+
+
     <div class="container-fluid" style="height:80%;">
         <div class="row h-100">
             {% include "model-esquerda.html" %}
-            <div class="col-sm-8" id="corpo">
-              <div id="demo" class="carousel slide">
-                <ul class="carousel-indicators">
-                  <li data-target="#demo" data-slide-to="0" class="active"></li>
-                  <li data-target="#demo" data-slide-to="1"></li>
-                  <li data-target="#demo" data-slide-to="2"></li>
-                  <li data-target="#demo" data-slide-to="3"></li>
-                </ul>
-                <div class="carousel-inner">
-                  <div class="carousel-item active" style="text-align: center;">
-                    <h1 id="publicacao">Post 1</h1>
-                    <img src="http://www.opapeldaarte.com.br/wp-content/uploads/2010/06/Callot-reiferdinando1.jpg" style="height: 400px;">
-                  </div>
-                  <div class="carousel-item" style="text-align: center;">
-                    <h1 id="publicacao">Post 2</h1>
-                    <img src="http://www.opapeldaarte.com.br/wp-content/uploads/2020/11/20201025102212opa.jpg"  style="height: 400px;">
-                  </div>
-                  <div class="carousel-item" style="text-align: center;">
-                    <h1 id="publicacao">Post 3</h1>
-                  </div>
-                  <div class="carousel-item" style="text-align: center;">
-                    <h1 id="publicacao">Post 4</h1>
-                  </div>
-                </div>
-
-                <!-- Left and right controls -->
-                <a class="carousel-control-prev" href="#demo" data-slide="prev">
-                  <span class="carousel-control-prev-icon"></span>
-                </a>
-                <a class="carousel-control-next" href="#demo" data-slide="next">
-                  <span class="carousel-control-next-icon"></span>
-                </a>
-              </div>
+            <div class="col-sm-8 h-100 scrollspyLateral" id="corpo" data-spy="scroll">
+                <div id="carouselExampleIndicators" class="carousel slide my-4 h-50" data-ride="carousel">
+                        <ol class="carousel-indicators">
+                          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                        </ol>
+                        <div class="carousel-inner h-100" role="listbox">
+                          <div class="carousel-item active h-100" style="text-align:center;">
+                            <img class="img-fluid h-100" style="height: 50%;" src="http://www.opapeldaarte.com.br/wp-content/uploads/2010/06/Callot-reiferdinando1.jpg" alt="First slide">
+                          </div>
+                          <div class="carousel-item" style="text-align:center;">
+                            <img class="img-fluid" src="http://www.opapeldaarte.com.br/wp-content/uploads/2020/11/20201025102212opa.jpg" alt="Second slide">
+                          </div>
+                          <div class="carousel-item" style="text-align:center;">
+                            <img class="img-fluid" src="http://placehold.it/900x350" alt="Third slide">
+                          </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        </a>
+                      </div>
                 <div class="row">
-                <div class="col-sm-6">
+                <div class="col-sm-6" id="colTextoIndex">
                   <p id="textoIndex">
                     O papel é onde o artista primeiro projeta sua alma, o espaço para a primeira inspiração, o primeiro croqui, o esboço, a primeira impressão. É a morada inaugural da idéia palpável da criação, visual e material. É nele que a arte nasce. Em suas fibras constroem-se traços e texturas, linhas retas e curvas, moldam-se pensamentos, delineiam-se projetos, devaneios e estudos sem os quais o artista não poderia terminar sua criação.
                   </p>
@@ -50,7 +47,7 @@
                     O objeto deste espaço é falar sobre esses artistas corajosos que encontraram no papel o suporte ideal para o desenvolvimento de suas carreiras, utilizando para isso as mais diversas técnicas de impressão, seja a gravura em metal, a xilogravura, a serigrafia, a gravura em relevo, o buril, a ponta seca, a litogravura etc.
                   </p>
                 </div>
-                <div class="col-sm-6">
+                <div class="col-sm-6" id="colTextoIndex">
                   <p id="textoIndex">
                     Pretendemos aqui não só divulgar a arte dos grandes mestres da gravura mas também de artistas que usaram o papel como expansão do espírito criativo. Falaremos sobre as mais diversas técnicas de impressão em papel, possibilitando aos amantes dessa tradição, a venda e a aquisição de obras categorizadas, com segurança e transparência.
                   </p>
@@ -68,6 +65,7 @@
         </div>
     </div>
     {% include "model-footer.html" %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+
 </body>
+
 </html>

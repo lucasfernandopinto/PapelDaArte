@@ -21,5 +21,5 @@ from core import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index),
-    path('<art_sobrenome>', views.artista),
+    path('Artistas/<art_sobrenome>', views.artista),
 ]
