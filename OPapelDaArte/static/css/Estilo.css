@@ -1,5 +1,8 @@
     /*HEADER*/
 
+    p,h1,h2,h3,h4,h5,h6{
+        font-family: roboto-light;
+    }
 
     #fb-root{
         float: right;
@@ -351,30 +354,61 @@
         transition: all 0.5s linear;
     }
 
+/*CORPO*/
+
     #corpo{
-        padding-left: 5%;
-        padding-right: 5%;
+         padding-left: 6%;
+         padding-right: 6%;
+         text-align:justify;
+    }
+
+    #figcaption{
+        text-align:center;
+        font-size:11px;
+    }
+
+    #historiaGravuraLink{
+        color:black;
+        text-decoration:none;
 
     }
 
-/*INDEX*/
-
-    #textoIndex{
-        text-align:justify;
+    #historiaGravuraLink h5{
+        color:black;
+        text-decoration:none;
+        border-bottom: solid 1px;
+        border-color: white;
+        font-weight: 700;
     }
 
-    #colTextoIndex{
-     padding: 3%;
+    #historiaGravuraLink h5:hover{
+        border-bottom: solid 1px;
+        border-color: black;
+        display: inline-block;
+        color: black;
+        font-family: roboto-light;
+        transition: all 0.75s linear;
     }
 
-    #next{
-        background-color:black;
+    #tecnicaImpressaoLink{
+        color:black;
+        text-decoration:none;
     }
 
-    #prev{
-        background-color:black;
+    #tecnicaImpressaoLink h3{
+        color:black;
+        text-decoration:none;
+        border-bottom: solid 1px;
+        border-color: white;
+        font-weight: 700;
     }
 
-    #teste{
-       z-index: -1;
+    #tecnicaImpressaoLink h3:hover{
+        border-bottom: solid 1px;
+        border-color: black;
+        display: inline-block;
+        color: black;
+        font-family: roboto-light;
+        transition: all 0.75s linear;
     }
+

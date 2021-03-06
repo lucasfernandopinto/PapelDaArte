@@ -20,7 +20,6 @@ def artista(request, art_sobrenome):
              'noticia': Noticia.objects.filter(id=1)}
     return render(request, 'artista.html', dados)
 
-
 def julioReis(request):
     dados = {'artista': Artista.objects.all(),
              'noticia': Noticia.objects.filter(id=1)}
@@ -33,10 +32,10 @@ def oPapelDaArte(request):
     return render(request, 'oPapelDaArte.html', dados)
 
 
-def hitoriaGravura(request):
+def historiaGravura(request):
     dados = {'artista': Artista.objects.all(),
              'noticia': Noticia.objects.filter(id=1)}
-    return render(request, 'hitoriaGravura.html', dados)
+    return render(request, 'historiaGravura.html', dados)
 
 
 def tecnicasImpressao(request):
@@ -67,5 +66,3 @@ def entrevistas(request):
     dados = {'artista': Artista.objects.all(),
              'noticia': Noticia.objects.filter(id=1)}
     return render(request, 'entrevistas.html', dados)
-
-
