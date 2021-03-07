@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+
+    {% include "model-head.html" %}
+
+</head>
+<body>
+    {% include "model-header.html" %}
+
+<div class="container-fluid h-80" style="position:fixed;"> {% include "model-esquerda.html" %} </div>
+    <div class="container-fluid">
+        <div class="row h-100">
+            <div class="col-sm-2"></div>
+                <div class="col-sm-8" id="corpo">
+                    <!--  Aqui vão as informações da pagina  -->
+                </div>
+            {% include "model-direita.html" %}
+            </div>
+        </div>
+
+    </div>
+
+    {% include "model-footer.html" %}
+
+</body>
+
+</html>

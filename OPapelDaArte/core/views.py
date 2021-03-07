@@ -121,7 +121,7 @@ def litografia(request):
 def maneiraNegra(request):
     dados = {'artista': Artista.objects.all(),
              'noticia': Noticia.objects.filter(id=1)}
-    return render(request, 'meneiraNegra.html', dados)
+    return render(request, 'maneiraNegra.html', dados)
 
 
 def pontaSeca(request):
