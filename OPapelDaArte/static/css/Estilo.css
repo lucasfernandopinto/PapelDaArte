@@ -360,6 +360,7 @@
          padding-left: 6%;
          padding-right: 6%;
          text-align:justify;
+         z-index:1;
     }
 
     #figcaption{
@@ -393,6 +394,7 @@
     #tecnicaImpressaoLink{
         color:black;
         text-decoration:none;
+
     }
 
     #tecnicaImpressaoLink h3{

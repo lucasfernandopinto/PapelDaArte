@@ -34,10 +34,10 @@ def oPapelDaArte(request):
     return render(request, 'oPapelDaArte.html', dados)
 
 
-def hitoriaGravura(request):
+def historiaGravura(request):
     dados = {'artista': Artista.objects.all(),
              'noticia': Noticia.objects.filter(id=1)}
-    return render(request, 'hitoriaGravura.html', dados)
+    return render(request, 'historiaGravura.html', dados)
 
 
 def tecnicasImpressao(request):
