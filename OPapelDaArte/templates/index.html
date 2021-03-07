@@ -19,15 +19,11 @@
                           <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                         </ol>
                         <div class="carousel-inner h-100" role="listbox">
-                          <div class="carousel-item active h-100" style="text-align:center;">
-                            <img class="img-fluid h-100" style="height: 50%;" src="http://www.opapeldaarte.com.br/wp-content/uploads/2010/06/Callot-reiferdinando1.jpg" alt="First slide">
-                          </div>
-                          <div class="carousel-item" style="text-align:center;">
-                            <img class="img-fluid" src="http://www.opapeldaarte.com.br/wp-content/uploads/2020/11/20201025102212opa.jpg" alt="Second slide">
-                          </div>
-                          <div class="carousel-item" style="text-align:center;">
-                            <img class="img-fluid" src="http://placehold.it/900x350" alt="Third slide">
-                          </div>
+                            {% for obras in obras %}
+                              <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %} h-100" style="text-align:center;">
+                                <a href="/Artistas/{{ obras.obr_artista }}"><img class="img-fluid h-100" style="height: 50%;" src="{{ obras.obr_img }}" alt="First slide"></a>
+                              </div>
+                            {% endfor %}
                         </div>
                         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                           <span class="carousel-control-prev-icon" aria-hidden="true"></span>

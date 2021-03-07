@@ -1,7 +1,11 @@
+from random import randint
+
 from django.db import models
 
 
 # Create your models here.
+from django.db.models import Count
+
 
 class Artista(models.Model):
     art_nome = models.CharField(max_length=100)
@@ -18,6 +22,13 @@ class Artista(models.Model):
         return self.art_sobrenome
 
 
+class ObrasManager(models.Manager):
+    def random(self):
+        count = self.aggregate(ids=Count('id'))['ids']
+        random_index = randint(0, count - 1)
+        return self.all()[random_index]
+
+
 class Obras(models.Model):
     obr_img = models.CharField(max_length=100)
     obr_legenda = models.CharField(max_length=200, null=True)
@@ -28,6 +39,8 @@ class Obras(models.Model):
     obr_info = models.TextField(null=True)
     obr_artista = models.ForeignKey(Artista, on_delete=models.CASCADE)
 
+    objects = ObrasManager()
+
     class Meta:
         db_table = 'obras'
 
@@ -35,11 +48,20 @@ class Obras(models.Model):
         return self.obr_nome
 
 
+class NoticiaManager(models.Manager):
+    def random(self):
+        count = self.aggregate(ids=Count('id'))['ids']
+        random_index = randint(0, count - 1)
+        return self.all()[random_index]
+
+
 class Noticia(models.Model):
     not_nome = models.CharField(max_length=100)
     not_tipo = models.CharField(max_length=15)
     not_desc = models.TextField()
     not_imagem = models.CharField(max_length=80)
+
+    objects = NoticiaManager()
 
     class Meta:
         db_table = 'noticias'
