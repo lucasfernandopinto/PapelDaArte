@@ -1,10 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+    {% include "model-head.html" %}
+
 </head>
 <body>
+    {% include "model-header.html" %}
+
+<div class="container-fluid h-80" style="position:fixed;"> {% include "model-esquerda.html" %} </div>
+    <div class="container-fluid">
+        <div class="row h-100">
+            <div class="col-sm-2"></div>
+                <div class="col-sm-8" id="corpo">
+                    <h1>LINÓLEO</h1>
+                    <hr>
+
+                    <center>
+                        <figure style="width: 25%; text-align: center;">
+                            <img src="..\static\impressao\linoleo.jpg" style="width: 100%;" alt="Marcus Lontra, Curador de Arte olhando e sorrindo para a foto" >
+                            <figcaption id="figcaption">"Galo", linóleo, 1942. Lívio Abramo.</figcaption>
+                        </figure>
+                    </center>
+
+                    <p>
+                        O pedaço de linóleo recebe o cavamento como na xilo, por goiva ou canivetes. Poder ser ferramentas mais frágeis do que as
+                        usadas para a madeira. Não há possibilidade de realizar traços finos e a impressão é idêntica a da xilogravura. Como
+                        características principais, as chapadas de preto compacto, sem o vestígio da fibra, que se nota na gravura em madeira.
+                        Ausência de traços finos e de cinzas.
+                    </p>
+
+                    <p>
+                        <b>Fonte:</b>
+                    </p>
+
+                    <p>
+                        DASILVA, Orlando. A Arte maior da Gravura: participação gráfica de Marcello Grassmann. São Paulo, ESPADE, 1976.
+                    </p>
+                </div>
+            {% include "model-direita.html" %}
+            </div>
+        </div>
+
+    </div>
+
+    {% include "model-footer.html" %}
 
 </body>
+
 </html>

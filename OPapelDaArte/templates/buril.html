@@ -1,10 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+    {% include "model-head.html" %}
+
 </head>
 <body>
+    {% include "model-header.html" %}
+
+<div class="container-fluid h-80" style="position:fixed;"> {% include "model-esquerda.html" %} </div>
+    <div class="container-fluid">
+        <div class="row h-100">
+            <div class="col-sm-2"></div>
+                <div class="col-sm-8" id="corpo">
+                    <h1>BURIL</h1>
+                    <hr>
+
+                    <center>
+                        <figure style="width: 25%; text-align: center;">
+                            <img src="..\static\impressao\buril.jpg" style="width: 100%;" alt="Marcus Lontra, Curador de Arte olhando e sorrindo para a foto" >
+                            <figcaption id="figcaption">"Adão e Eva", gravura a buril. Gustave Staal, 1870.</figcaption>
+                        </figure>
+                    </center>
+
+                    <p>
+                        Normalmente cortada em chapa de cobre. Os traços são abertos diretamente pelo buril, instrumento de aço com uma ponta cortante,
+                        em forma de V. Na outra extremidade um cabo de madeira, em forma de meia maçaneta, para ser adaptada à palma da mão. Para fazer
+                        o corte a mão não tem movimento para a frente. A chapa é que  andar  ao encontro do buril. Podem ser feitos traços de diversas
+                        grossuras, que são controladas pela inclinação dada ao buril.
+                    </p>
+
+                    <p>
+                        <u>Impressão</u>: como toda a gravura em côncavo, a tinta é depositada por boneca de couro, com uma certa pressão circular, em toda
+                        a superfície da chapa ligeiramente aquecida. Esta tinta é retirada das superfícies altas por pano de trama larga (tarlatana)
+                        que em movimentos circulares, e não atingindo as partes baixas, deixa intacta a tinta dentro dos traços cortados pelo buril.
+                        Esta tinta deverá ser transferida ao papel pela prensa calcográfica. Dois cilindros, um sobre o outro, pressionados um contra
+                        o outro com força extremamente elevada. Um dos cilindros imprime movimento à chapa plana, que se locomove entre os dois,
+                        para um lado e para o outro. Sobre esta chapa (cama ou berço) deposita-se a matriz entintada e em cima dela o papel úmido.
+                        Cobrindo tudo, um pano de feltro. Quando a chapa gravada passa entre os dois rolos, a alta pressão obriga o papel úmido a
+                        retirar a tinta que se aloja dentro dos traços.
+                    </p>
+
+                    <p>
+                        Caracterísitcas: tendo o traço cavado a forma de V, a abertura mais larga do que o fundo, não há impedimento da transferência
+                        da tinta para o papel. Resulta um traço de aparência fria, uniforme, de margens regulares, com quantidade de tinta idêntica,
+                        em toda a extensão, dos traços da mesma espessura.
+                    </p>
+
+                    <p>
+                        <b>Fonte:</b>
+                    </p>
+
+                    <p>
+                        DASILVA, Orlando. A Arte maior da Gravura: participação gráfica de Marcello Grassmann. São Paulo, ESPADE, 1976.
+                    </p>
+                </div>
+            {% include "model-direita.html" %}
+            </div>
+        </div>
+
+    </div>
+
+    {% include "model-footer.html" %}
 
 </body>
+
 </html>

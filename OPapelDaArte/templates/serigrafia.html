@@ -1,10 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+    {% include "model-head.html" %}
+
 </head>
 <body>
+    {% include "model-header.html" %}
+
+<div class="container-fluid h-80" style="position:fixed;"> {% include "model-esquerda.html" %} </div>
+    <div class="container-fluid">
+        <div class="row h-100">
+            <div class="col-sm-2"></div>
+                <div class="col-sm-8" id="corpo">
+                    <h1>SERIGRAFIA</h1>
+                    <hr>
+
+                    <center>
+                        <figure style="width: 25%; text-align: center;">
+                            <img src="..\static\impressao\serigrafia.jpg" style="width: 100%;" alt="Marcus Lontra, Curador de Arte olhando e sorrindo para a foto" >
+                            <figcaption id="figcaption">"Suíte Manequim n.4" Serigrafia 31/100, Iberê Camargo</figcaption>
+                        </figure>
+                    </center>
+
+                    <p>
+                        O processo de impressão da serigrafia ou silk screen começa ao se esticar a seda num chassi. As partes em que não se quer deixar a
+                        tinta atravessar a seda, são vedadas de diversas maneiras, com verniz, estêncil ou um simples papel. Pode ser usado estêncil fotográfico.
+                        Estampa facilmente grande quantidade de cópias.  Não é necessário o auxílio da prensa para a impressão. O papel é colocado em superfície
+                        plana e sobre  ele o chassi. A tinta é posta num dos lados do chassi, em que está bloqueada a sua passagem. Ela é puxada, com um rodo de
+                        borracha, por toda a superfície da seda esticada. Onde não encontra passagem obstruída, a tinta atravessa a seda e se transfere para o
+                        papel.
+                    </p>
+
+                    <p>
+                        Quando a tinta é grossa demais fica com marcas da trama da seda, quase que um relevo. Não tem características próprias.  É um método
+                        de multiplicação de provas, mais fácil de se executar  e de imprimir que a xilo, o metal, a lito; seu custo é mais barato, estampa
+                        mais facilmente um maior número de cópias. De modo geral, a tinta fica sobre o papel, em camada espessa, opaca, não participando do
+                        mesmo, mas podem também ser usadas tintas ralas. A maioria das impressões é feita em superfícies chapadas, mas pode ser usado craiom
+                        gorduroso ou acerado, ou serem vaporizados vernizes para obstruir a seda, ou superfícies que criem cracle, para se imprimirem texturas.
+                    </p>
+                    <p>
+                        <b>Fonte:</b>
+                    </p>
+
+                    <p>
+                        DASILVA, Orlando. A Arte maior da Gravura: participação gráfica de Marcello Grassmann. São Paulo, ESPADE, 1976.
+                    </p>
+                </div>
+            {% include "model-direita.html" %}
+            </div>
+        </div>
+
+    </div>
+
+    {% include "model-footer.html" %}
 
 </body>
+
 </html>

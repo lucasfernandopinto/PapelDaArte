@@ -1,10 +1,62 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+    {% include "model-head.html" %}
+
 </head>
 <body>
+    {% include "model-header.html" %}
+
+<div class="container-fluid h-80" style="position:fixed;"> {% include "model-esquerda.html" %} </div>
+    <div class="container-fluid">
+        <div class="row h-100">
+            <div class="col-sm-2"></div>
+                <div class="col-sm-8" id="corpo">
+                    <h1>MANEIRA NEGRA</h1>
+                    <hr>
+
+                    <center>
+                        <figure style="width: 25%; text-align: center;">
+                            <img src="..\static\impressao\maneira_negra.jpg" style="width: 100%;" alt="Marcus Lontra, Curador de Arte olhando e sorrindo para a foto" >
+                            <figcaption id="figcaption">"Pulso", gravura em metal à maneira negra, 1995. Luciana Costa.</figcaption>
+                        </figure>
+                    </center>
+
+                    <p>
+                        “Este processo foi descoberto por Luigi Siegen, em 1642. Foi muito usado pelos ingleses. O método consiste em tornar
+                        áspera a superfície da chapa, de forma que esta seja capas de reter a tinta de impressão e dar uma cópia perfeitamente
+                        negra. O utensílio usado para se fazer este granitado sobre a superfície da chapa, é o “berceau”. Trata-se de um ferro
+                        cuja lâmina, ligeiramente curva, é dotada de uma série de pontas afiadas. O gravador faz passear este ferro sobre a
+                        chapa, imprimindo-se um movimento de balanço, ao mesmo tempo em que o impulsiona para a frente, de forma que ele se
+                        desloque na direção desejada. Deve-se fazer com que as linhas fiquem o mais próximo possível umas das outras. Repete-se
+                        este movimento ao longo da chapa no sentido do comprimento, depois da largura e das diagonais, tantas vezes que sejam
+                        necessárias para se obter uma superfície suficientemente áspera. Deve-se também procurar que as linhas perpendiculares
+                        se cruzem em ângulo reto. Também pode-se conseguir este granulado com a ponta seca ou com a água tinta, a qual, aliás,
+                        não dá o caráter aveludado, próprio da ponta seca. Assim como a ponta seca, a maneira negra gasta-se rapidamente pela
+                        pressão da prensa, o que não permite tirar Estados durante o trabalho. Sobre a superfície preparada pelo “berceau”,
+                        desenha-se com sanguina ou com giz e, em seguida, vai-se gradativamente, tirando os claros e as meias tintas, usando-se
+                        os claros que não serão ainda mais limpos, se se passar depois o brunidor. Com o brunidor, obtêm-se as meias tintas.
+                        Para uma longa tiragem de uma chapa de maneira negra, convém cromar a chapa.”
+                    </p>
+
+                    <p>
+                        <b>Fontes:</b>
+                    </p>
+
+                    <p>
+                        CAMARGO, Iberê. A Gravura.  Topal, São Paulo, 1975.<br>
+                        CAMARGO, Iberê. A Gravura.  Porto Alegre, Sagra: DC Luzzatto, 1992.
+                    </p>
+                </div>
+            {% include "model-direita.html" %}
+            </div>
+        </div>
+
+    </div>
+
+    {% include "model-footer.html" %}
 
 </body>
+
 </html>

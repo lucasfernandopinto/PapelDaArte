@@ -1,10 +1,74 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+    {% include "model-head.html" %}
+
 </head>
 <body>
+    {% include "model-header.html" %}
+
+<div class="container-fluid h-80" style="position:fixed;"> {% include "model-esquerda.html" %} </div>
+    <div class="container-fluid">
+        <div class="row h-100">
+            <div class="col-sm-2"></div>
+                <div class="col-sm-8" id="corpo">
+                    <h1>XILOGRAVURA</h1>
+                    <hr>
+
+                    <center>
+                        <figure style="width: 25%; text-align: center;">
+                            <img src="..\static\impressao\xilogravura.jpg" style="width: 100%;" alt="Marcus Lontra, Curador de Arte olhando e sorrindo para a foto" >
+                            <figcaption id="figcaption">"A tarde" - Oswaldo Goeldi</figcaption>
+                        </figure>
+                    </center>
+
+                    <p>
+                        Há duas técnicas de xilogravura e o que lhe dá o nome é o modo como a madeira é cortada. Se cortada em tábuas, no sentido
+                        vertical da árvore em pé, ao comprimento de sua fibra, chama-se xilogravura de fibra. Se a madeira, para se fabricar o taco,
+                        foi cortada no sentido horizontal da árvore em pé, chama-se xilogravura de topo.
+                    </p>
+
+                    <p>
+                        Xilogravura de fibra: o taco de madeira, do mesmo tamanho do desenho a ser gravado, é polido para receber o desenho, que é
+                        cavado, nas partes brancas, por instrumento cortante: goiva, formão, canivete. A madeira alta, não cortada pelo gravador,
+                        é que vai receber a tinta por intermédio de um rolo. Esta tinta será transferida ao papel.  A impressão pode ser feita à mão.
+                        Depois do papel assentado sobre o taco entintado, o mesmo é friccionado, pelas costas, com uma espátula  ou outro instrumento
+                        que se mostre capaz de pressionar o papel sem o rasgar. A colher de sopa é muito usada. Também pode ser impressa por prelo de
+                        rosca, tipográfico, até mesmo nas prensas calcográficas. Desde que haja a pressão necessária para retirar a tinta da madeira,
+                        a impressão da xilo se torna possível. Um das características de boa impressão, é quando os “pretos” conservam as características
+                        da fibra e nervuras da madeira.
+                    </p>
+
+                    <p>
+                        Xilogravura de topo: como a de fibra, a madeira é polida e desenhada para receber a gravação que é feita com buril. A madeira do
+                        topo é muito mais unida, não apresenta fibra nem nervura, o que permite, ao buril, trabalhar traços mais delicados pois não o
+                        dificulta, no corte, a direção da fibra da madeira. Os traços cavados podem ser cortados quase juntos, resultando traços impressos
+                        também quase unidos. A impressão se dá da mesma forma da xilo de fibra.
+                    </p>
+
+                    <p>
+                        Essa xilo trabalha mais com o traço que, mais ou menos separado, formam gamas de claro-escuro. Quando cortada com muita delicadeza
+                        dá, a olho nu, a ilusão que aguadas, e não traços, formam os valores. Os pretos são compactos, sem a respiração (pequenos espaços
+                        brancos) das nervuras, que servem para identificar a xilo de fibra.
+                    </p>
+
+                    <p>
+                        <b>Fonte:</b>
+                    </p>
+
+                    <p>
+                        DASILVA, Orlando. A Arte maior da Gravura: participação gráfica de Marcello Grassmann. São Paulo, ESPADE, 1976.
+                    </p>
+                </div>
+            {% include "model-direita.html" %}
+            </div>
+        </div>
+
+    </div>
+
+    {% include "model-footer.html" %}
 
 </body>
+
 </html>

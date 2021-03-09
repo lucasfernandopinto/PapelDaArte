@@ -1,10 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+    {% include "model-head.html" %}
+
 </head>
 <body>
+    {% include "model-header.html" %}
+
+<div class="container-fluid h-80" style="position:fixed;"> {% include "model-esquerda.html" %} </div>
+    <div class="container-fluid">
+        <div class="row h-100">
+            <div class="col-sm-2"></div>
+                <div class="col-sm-8" id="corpo">
+                    <h1>LITOGRAFIA</h1>
+                    <hr>
+
+                    <center>
+                        <figure style="width: 25%; text-align: center;">
+                            <img src="..\static\impressao\litografia.jpg" style="width: 100%;" alt="Marcus Lontra, Curador de Arte olhando e sorrindo para a foto" >
+                            <figcaption id="figcaption">"Costumes do Rio de Janeiro", litografia, 1835. Rugendas.</figcaption>
+                        </figure>
+                    </center>
+
+                    <p>
+                        Baseia-a na repulsão que a água tem pela gordura e que esta tem pela água. Numa pedra calcárea perfeitamente desengordurada, o
+                        desenho e feito por lápis gorduroso ou tinta, também gordurosa, aplicada a pincel ou caneta. Uma solução ácida fixa a gordura à
+                        pedra. A impressão se dá através de prensa litográfica que, como a calcográfica, se compõe de cama com movimentos de vai-e-vem,
+                        onde se coloca a pedra. Sobre a pedra entintada é colocado o papel a receber a impressão e por cima,  o cartão de proteção.
+                        A pressão regulável e perpendicular é feita por ratora. Para a entintagem, a pedra é molhada. A parte sem gordura absorve a
+                        água a água e  ficando úmida, a área engordurada repele-a. Com o rolo é passada a tinta, que é gordurosa. Onde está traçado o
+                        desenho, e a pedra se mantém engordurada, a tinta é retida. Na pedra sem desenho, que está úmida, a tinta é recusada.
+                    </p>
+
+                    <p>
+                        A tinta aplicada a pincel ou caneta, obstrói o grão da pedra, e imprime, portanto em chapa compacta, quer em traços ou planos.
+                        O craiom gorduroso atinge só as partes altas e, dependendo da força com que é usado, da granulação da pedra, imprime mostrando
+                        essa granulação. Com o craiom pode-se trabalhar dos cinzas mais leves aos pretos mais intensos. A pedra também pode ser engordurada
+                        por tinta líquida que permite ser jogada ou pulverizada, imprimindo manchas e pontos irregulares.
+                    </p>
+                    <p>
+                        <b>Fonte:</b>
+                    </p>
+
+                    <p>
+                        DASILVA, Orlando. A Arte maior da Gravura: participação gráfica de Marcello Grassmann. São Paulo, ESPADE, 1976.
+                    </p>
+                </div>
+            {% include "model-direita.html" %}
+            </div>
+        </div>
+
+    </div>
+
+    {% include "model-footer.html" %}
 
 </body>
+
 </html>

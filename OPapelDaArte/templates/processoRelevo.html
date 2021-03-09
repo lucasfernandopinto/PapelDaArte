@@ -1,10 +1,68 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+
+    {% include "model-head.html" %}
+
 </head>
 <body>
+    {% include "model-header.html" %}
+
+<div class="container-fluid h-80" style="position:fixed;"> {% include "model-esquerda.html" %} </div>
+    <div class="container-fluid">
+        <div class="row h-100">
+            <div class="col-sm-2"></div>
+                <div class="col-sm-8" id="corpo">
+                    <h1>PROCESSO DO RELEVO</h1>
+                    <hr>
+
+                    <center>
+                        <figure style="width: 25%; text-align: center;">
+                            <img src="..\static\impressao\processo_relevo.jpg" style="width: 100%;" alt="Marcus Lontra, Curador de Arte olhando e sorrindo para a foto" >
+                            <figcaption id="figcaption">"Abstrato" Gravura em metal com Relevo, s/d. Anna Letycia.</figcaption>
+                        </figure>
+                    </center>
+
+                    <p>
+                        “Este processo, que dá à gravura um aspecto de relevo, executa-se deixando que o ácido nítrico ataque livremente as partes
+                        descobertas da chapa durante um tempo suficiente para produzir rebaixos na sua superfície. Uma chapa assim mordida apresenta
+                        uma superfície irregular, com visíveis diferenças de níveis, segundo o grau da mersura que tiver sofrido. Esses planos,
+                        formados pelos rebaixos, serão, na impressão, circundados por um contorno negro resultante da retenção da tinta contra as
+                        bordas do mesmo e que será tanto maior quanto for a diferença de nível de um plano para o outro. As bordas dessas formas do
+                        mesmo e que será tanto maior quanto for a diferença de nível de um plano para o outro. As bordas dessas formas apresentarão
+                        maior ou menor pureza, segundo o mordente usado. As partes, que devem permanecer brancas, serão previamente protegidas com
+                        verniz líquido, assim como as que já foram suficientemente atacadas. É aconselhável reforçar a camada de verniz, em duas
+                        coberturas. Neste método, pode-se empregar o ácido mais forte, tendo-se naturalmente, o cuidado de não exagerar. O verniz
+                        dificilmente resistiria à potência demoníaca do nítrico puro, que, entretanto, se empregado, deve-se fazê-lo a pincel, com
+                        o ácido novo misturado com um pouco de ácido velho. Também pode-se envernizar a chapa com cera negra, e, depois, descobrir
+                        as partes da se deseja expor ao ácido, aplicando-lhes, a pincel, uma solução composta de 1 parte de óleo de oliva, 1 parte
+                        de terebentina e ½ parte de negro de fumo. Esta solução tem a propriedade de dissolver o verniz que, dentro de poucos instantes,
+                        pode ser destacado sob a pressão de um pedaço de mata-borrão.
+                    </p>
+
+                    <p>
+                        É igualmente prático recorrer ao processo do açúcar para delimitar-se às zonas que devem receber a mersura. O processo do relevo
+                        pode ser combinado com outros, de acordo com o efeito que o artista deseja obter.  A estampa do cobre trabalhado nessa maneira
+                        apresenta, no verso, marcas visíveis dos rebaixos na chapa.”
+                    </p>
+
+                    <p>
+                        <b>Fontes:</b>
+                    </p>
+
+                    <p>
+                        CAMARGO, Iberê. A Gravura.  Topal, São Paulo, 1975.<br>
+                        CAMARGO, Iberê. A Gravura.  Porto Alegre, Sagra: DC Luzzatto, 1992.
+                    </p>
+                </div>
+            {% include "model-direita.html" %}
+            </div>
+        </div>
+
+    </div>
+
+    {% include "model-footer.html" %}
 
 </body>
+
 </html>
