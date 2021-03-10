@@ -50,3 +50,6 @@ urlpatterns = [
     path('Tecnicas-de-Impressao/Verniz-Mole', views.vernizMole),
     path('Tecnicas-de-Impressao/Xilogravura', views.xilogravura),
 ]
+
+admin.site.site_header = 'Administração O Papel da Arte'
+admin.site.index_title = 'Registros do Site'
