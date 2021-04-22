@@ -17,7 +17,7 @@
                     <div class="row">
                         <div>
                             <figure style="float: left; width: 25%; margin-right: 2%;">
-                                <img src="{{ artistaPrincipal.art_imagem }}" style="width: 100%;" alt="Imagem do Artista {{ artistaPrincipal.art_nome }} {{ artistaPrincipal.art_sobrenome }}" >
+                                <img src="{{ artistaPrincipal.art_imagem.url }}" style="width: 100%;" alt="Imagem do Artista {{ artistaPrincipal.art_nome }} {{ artistaPrincipal.art_sobrenome }}" >
                                 <figcaption style="text-align: center;"> Descrição bem longa da imagem posicionada abaicxo da imagem </figcaption>
                             </figure>
                             <p class="mr-5">{{ artistaPrincipal.art_desc|safe }}</p>

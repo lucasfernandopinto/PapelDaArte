@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from django.views.generic import RedirectView
+
+from OPapelDaArte import settings
+from django.conf.urls.static import static
 from core import views
 
 urlpatterns = [
@@ -49,7 +52,7 @@ urlpatterns = [
     path('Tecnicas-de-Impressao/Serigrafia', views.serigrafia),
     path('Tecnicas-de-Impressao/Verniz-Mole', views.vernizMole),
     path('Tecnicas-de-Impressao/Xilogravura', views.xilogravura),
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 admin.site.site_header = 'Administração O Papel da Arte'
 admin.site.index_title = 'Registros do Site'
