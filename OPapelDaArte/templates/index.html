@@ -1,4 +1,75 @@
-<!DOCTYPE html>
+    {% extends 'modelo.html' %}
+    {% block content %}
+      <div id="fundoIndex">
+        <div class="container-fluid" style="height:80%;">
+          <div class="row justify-content-center">
+            <div id="carouselExampleControls" class="carousel slide my-4 h-50" data-ride="carousel">
+              <div class="carousel-inner h-100" role="listbox">
+                <div class="carousel-item active h-100">
+                  <a href="#"><img class="img-fluid" style="max-height:400px; max-width: 100%;"
+                      src="https://images.unsplash.com/photo-1603632088148-3680d7e5dda2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80"
+                      alt="First slide"></a>
+                </div>
+                <div class="carousel-item">
+                  <a href="#"><img class="img-fluid" style="max-height:400px; max-width: 100%;"
+                      src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDl8Ym84alFLVGFFMFl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      alt="First slide"></a>
+                </div>
+                <div class="carousel-item">
+                  <a href="#"><img class="img-fluid" style="max-height:400px; max-width: 100%;"
+                      src="https://images.unsplash.com/photo-1619017236031-6f55d516f49a?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMyfGJvOGpRS1RhRTBZfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                      alt="First slide"></a>
+                </div>
+              </div>
+              <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              </a>
+              <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              </a>
+            </div>
+            <div class="row justify-content-center">
+              <div class="col-sm-5" id="colTextoIndex">
+                <p id="textoIndex">
+                  O papel é onde o artista primeiro projeta sua alma; é o espaço para a primeira inspiração, o primeiro
+                  croqui, o esboço, a primeira impressão. É a morada inaugural da ideia palpável da criação, visual e
+                  material. É nele que a arte nasce. Em suas fibras constroem-se traços e texturas, linhas retas e
+                  curvas, moldam-se pensamentos, relevos, delineiam-se projetos, devaneios e estudos, sem os quais o
+                  artista não poderia ir adiante em sua criação.
+                </p>
+                <p id="textoIndex">
+                  O objeto deste espaço é falar e oferecer obras destes artistas corajosos que encontraram no papel o
+                  suporte ideal para o desenvolvimento de suas carreiras, utilizando para isso as mais diversas técnicas
+                  de impressão, seja a gravura em metal, a xilogravura, a serigrafia, o relevo, o buril, a ponta seca, a
+                  litogravura, a aquarela etc.
+                </p>
+
+              </div>
+              <div class="col-sm-5" id="colTextoIndex">
+                <p id="textoIndex">
+                  Pretendemos, aqui, não só divulgar a arte dos grandes mestres da gravura mas também de artistas que
+                  usaram o papel como expansão do espírito criativo. Falaremos sobre as mais diversas técnicas de
+                  impressão, possibilitando aos amantes dessa tradição a venda e a aquisição de obras categorizadas, com
+                  segurança e boa procedência.
+
+                </p>
+                <p id="textoIndex">
+                  Faremos entrevistas com grandes mestres da gravura no Brasil, ofereceremos serviço de restauração de
+                  obras de arte em papel, dicas sobre como melhor emoldurá-las, além de conversar com colecionadores e
+                  especialistas no assunto. Enfim, pretendemos tornar esse site um local democrático, frequentado por
+                  todos os amantes da gravura, sejam eles artistas ou simples admiradores do mais democrático suporte
+                  das artes visuais. Aproveitem!
+                </p>
+                <p style="text-align:right;"><b>Julio Reis</b></p>
+
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+{% endblock %}
+<!--  <!DOCTYPE html>
 <html lang="pt-br">
 <head>
 
@@ -6,60 +77,95 @@
 
 </head>
 <body>
-    {% include "model-header.html" %}
-
-    <div class="container-fluid" style="height:80%;">
-        <div class="row h-100">
-            {% include "model-esquerda.html" %}
-            <div class="col-sm-8 h-100 scrollspyLateral" id="corpo" data-spy="scroll">
-                <div id="carouselExampleIndicators" class="carousel slide my-4 h-50" data-ride="carousel">
-                        <ol class="carousel-indicators">
-                          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-                          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-                          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-                        </ol>
-                        <div class="carousel-inner h-100" role="listbox">
-                            {% for obras in obras %}
-                              <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %} h-100" style="text-align:center;">
-                                <a href="/Artistas/{{ obras.obr_artista }}"><img class="img-fluid h-100" style="height: 50%;" src="{{ obras.obr_img }}" alt="First slide"></a>
-                              </div>
-                            {% endfor %}
-                        </div>
-                        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        </a>
-                        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-                          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        </a>
-                      </div>
-                <div class="row">
-                <div class="col-sm-6" id="colTextoIndex">
-                  <p id="textoIndex">
-                    O papel é onde o artista primeiro projeta sua alma, o espaço para a primeira inspiração, o primeiro croqui, o esboço, a primeira impressão. É a morada inaugural da idéia palpável da criação, visual e material. É nele que a arte nasce. Em suas fibras constroem-se traços e texturas, linhas retas e curvas, moldam-se pensamentos, delineiam-se projetos, devaneios e estudos sem os quais o artista não poderia terminar sua criação.
-                  </p>
-                  <p id="textoIndex">
-                    O objeto deste espaço é falar sobre esses artistas corajosos que encontraram no papel o suporte ideal para o desenvolvimento de suas carreiras, utilizando para isso as mais diversas técnicas de impressão, seja a gravura em metal, a xilogravura, a serigrafia, a gravura em relevo, o buril, a ponta seca, a litogravura etc.
-                  </p>
+    <div class="d-flex h-100" id="wrapper">
+        {% include "model-header.html" %}
+          <div id="fundoIndex">
+            <div class="container-fluid" style="height:80%;">
+              <div class="row justify-content-center">
+                <div id="carouselExampleControls" class="carousel slide my-4 h-50" data-ride="carousel">
+                  <div class="carousel-inner h-100" role="listbox">
+                    <div class="carousel-item active h-100">
+                      <a href="#"><img class="img-fluid" style="max-height:400px; max-width: 100%;"
+                          src="https://images.unsplash.com/photo-1603632088148-3680d7e5dda2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80"
+                          alt="First slide"></a>
+                    </div>
+                    <div class="carousel-item">
+                      <a href="#"><img class="img-fluid" style="max-height:400px; max-width: 100%;"
+                          src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDl8Ym84alFLVGFFMFl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                          alt="First slide"></a>
+                    </div>
+                    <div class="carousel-item">
+                      <a href="#"><img class="img-fluid" style="max-height:400px; max-width: 100%;"
+                          src="https://images.unsplash.com/photo-1619017236031-6f55d516f49a?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMyfGJvOGpRS1RhRTBZfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
+                          alt="First slide"></a>
+                    </div>
+                  </div>
+                  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  </a>
+                  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  </a>
                 </div>
-                <div class="col-sm-6" id="colTextoIndex">
-                  <p id="textoIndex">
-                    Pretendemos aqui não só divulgar a arte dos grandes mestres da gravura mas também de artistas que usaram o papel como expansão do espírito criativo. Falaremos sobre as mais diversas técnicas de impressão em papel, possibilitando aos amantes dessa tradição, a venda e a aquisição de obras categorizadas, com segurança e transparência.
-                  </p>
-                  <p id="textoIndex">
-                    Entrevistas com grandes mestres da gravura no Brasil, serviço de restauração de obras, dicas sobre como melhor emoldurá-las, conversas com colecionadores e especialistas no assunto.
-                  </p>
-                  <p id="textoIndex">
-                    Enfim, pretendemos tornar esse site um local democrático, freqüentado por todos os amantes da gravura, sejam eles artistas ou simples admiradores como nós. Aproveitem!
-                  </p>
-                  <p id="textoIndex" style="text-align: right;"><b>Julio Reis</b></p>
+                <div class="row justify-content-center">
+                  <div class="col-sm-5" id="colTextoIndex">
+                    <p id="textoIndex">
+                      O papel é onde o artista primeiro projeta sua alma; é o espaço para a primeira inspiração, o primeiro
+                      croqui, o esboço, a primeira impressão. É a morada inaugural da ideia palpável da criação, visual e
+                      material. É nele que a arte nasce. Em suas fibras constroem-se traços e texturas, linhas retas e
+                      curvas, moldam-se pensamentos, relevos, delineiam-se projetos, devaneios e estudos, sem os quais o
+                      artista não poderia ir adiante em sua criação.
+                    </p>
+                    <p id="textoIndex">
+                      O objeto deste espaço é falar e oferecer obras destes artistas corajosos que encontraram no papel o
+                      suporte ideal para o desenvolvimento de suas carreiras, utilizando para isso as mais diversas técnicas
+                      de impressão, seja a gravura em metal, a xilogravura, a serigrafia, o relevo, o buril, a ponta seca, a
+                      litogravura, a aquarela etc.
+                    </p>
+
+                  </div>
+                  <div class="col-sm-5" id="colTextoIndex">
+                    <p id="textoIndex">
+                      Pretendemos, aqui, não só divulgar a arte dos grandes mestres da gravura mas também de artistas que
+                      usaram o papel como expansão do espírito criativo. Falaremos sobre as mais diversas técnicas de
+                      impressão, possibilitando aos amantes dessa tradição a venda e a aquisição de obras categorizadas, com
+                      segurança e boa procedência.
+
+                    </p>
+                    <p id="textoIndex">
+                      Faremos entrevistas com grandes mestres da gravura no Brasil, ofereceremos serviço de restauração de
+                      obras de arte em papel, dicas sobre como melhor emoldurá-las, além de conversar com colecionadores e
+                      especialistas no assunto. Enfim, pretendemos tornar esse site um local democrático, frequentado por
+                      todos os amantes da gravura, sejam eles artistas ou simples admiradores do mais democrático suporte
+                      das artes visuais. Aproveitem!
+                    </p>
+                    <p style="text-align:right;"><b>Julio Reis</b></p>
+
+                  </div>
+
                 </div>
               </div>
             </div>
-            {% include "model-direita.html" %}
+          </div>
         </div>
+      </div>
     </div>
-    {% include "model-footer.html" %}
+
+
+{% load static %}
+
+  <script src="{% static 'JS/jquery.min.js' %} "></script>
+  <script src="{% static 'JS/bootstrap.bundle.min.js' %}"></script>
+
+
+  <script>
+    $("#menu-toggle").click(function (e) {
+      e.preventDefault();
+      $("#wrapper").toggleClass("toggled");
+    });
+  </script>
+
 
 </body>
 
-</html>
+</html> -->

@@ -1,416 +1,92 @@
-    /*HEADER*/
-
-    p,h1,h2,h3,h4,h5,h6{
-        font-family: roboto-light;
-    }
-
-    #fb-root{
-        float: right;
-    }
-
-    .navbar-collapse {
-        justify-content: center;
-    }
-
-    #nav {
-        background-color: #DCDCDC;
-        width: auto;
-        margin: 0 auto;
-        display: block;
-    }
-
-    .nav-item {
-        display: block;
-        margin: 0 10px;
-    }
-
-    .nav-item p {
-        color: black;
-        font-size: 16px;
-        font-family: roboto-light;
-        display: block;
-    }
-
-    li {
-        float: left;
-        text-align: center;
-        font-family: roboto-light;
-        display: block;
-    }
-
-    li a {
-        border-bottom: solid 1px;
-        border-color: #DCDCDC;
-        color: #DCDCDC;
-        text-align: center;
-        text-decoration: none;
-        font-family: roboto-light;
-        display: block;
-    }
-
-    .active {
-        font-weight: bolder;
-    }
-
-    li a:hover {
-        border-bottom: solid 1px;
-        border-color: black;
-        transition: all 1.5s linear;
-        display: block;
-    }
-
-    .dropdown .dropbtn {
-        border: none;
-        outline: none;
-        color: black;
-        padding-top: 11%;
-        background-color: inherit;
-        font-family: roboto-light;
-        font-size: 16px;
-    }
-
-    .dropdown {
-        font-family: roboto-light;
-        font-size: 16px;
-    }
-
-    .dropdown-content {
-        font-family: roboto-light;
-        position: absolute;
-        visibility:hidden;
-        padding: 20%;
-        background-color: #DCDCDC;
-        box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.3);
-        z-index: 2;
-    }
-
-    .dropdown-content a {
-        font-family: roboto-light;
-        font-size: 16px;
-        color: black;
-        padding: 15% 1%;
-        text-decoration: none;
-        display: inline-block;
-    }
-
-    .dropdown:hover .dropdown-content {
-        visibility: visible;
-    }
-    /*LATERAL ESQUERDA*/
-
-    html,
-    body {
-        margin: 0;
-        height: 100%;
-    }
-
-    .scrollspyLateral {
-        position: relative;
-        overflow: auto;
-        height: 93%;
-    }
-
-    .scrollspyLateral a {
-        border-bottom: solid 1px;
-        border-color: white;
-        color: black;
-        font-family: roboto-light;
-        font-size: 16px;
-
-    }
-
-    #scrollspyLateral a:hover {
-        border-bottom: solid 1px;
-        border-color: black;
-        display: inline-block;
-        color: black;
-        font-family: roboto-light;
-        font-size: 16px;
-        transition: all 0.75s linear;
-
-    }
-
-     ::-webkit-scrollbar {
-        width: 5px;
-    }
-
-     ::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 5px #D3D3D3;
-        border-radius: 10px;
-    }
-
-     ::-webkit-scrollbar-thumb {
-        background: #D3D3D3;
-        border-radius: 10px;
-    }
-
-     ::-webkit-scrollbar-thumb:hover {
-        background: #BEBEBE;
-    }
-
-    * {
-        box-sizing: border-box;
-    }
-
-    .example {
-        position: sticky;
-    }
-
-    #pesquisar {
-        outline: none;
-        border: solid 1px;
-        border-color: black;
-    }
-
-    #pesquisar:hover {
-        border-bottom: solid 1px;
-        border-top-color: white;
-        border-right-color: white;
-        border-left-color: white;
-        outline: none;
-        transition: all 0.75s linear;
-    }
-
-    #botaoPesquisar {
-        background-color: transparent;
-        border: none;
-        position: relative;
-        margin-left: 5%;
-    }
-
-    .fa {
-        color: black;
-    }
-
-    form.example input[type=text] {
-        padding: 4px;
-        font-size: 16px;
-        border: 1px solid grey;
-        float: left;
-        width: 70%;
-        background: #f1f1f1;
-        position: relative;
-        margin-top: 10px;
-    }
-
-    form.example button {
-        float: left;
-        width: 15%;
-        padding: 4px;
-        background: #2196F3;
-        color: white;
-        font-size: 16px;
-        border: 1px solid grey;
-        border-left: none;
-        cursor: pointer;
-        position: relative;
-        margin-top: 10px;
-    }
-
-    form.example button:hover {
-        background: #0b7dda;
-    }
-
-    form.example::after {
-        content: "";
-        clear: both;
-        display: table;
-    }
-    /*LATERAL DIREITA*/
-
-    #imgLateral {
-        width: 100%;
-        height: auto;
-        border: 6px inset #CAE1FF;
-        background: #b1b1c3;
-        padding: 5px;
-        -webkit-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
-        -moz-box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
-        box-shadow: 9px 7px 5px rgba(50, 50, 50, 0.77);
-    }
-
-    #lateralDireita {
-        position: relative;
-        float: right;
-        display: inline;
-        height: 50%;
-    }
-
-    #lateralDireita a {
-        text-decoration: none;
-    }
-
-    #lateralDireita h2 {
-        display: inline-block;
-        color: black;
-        border-bottom: solid 1px;
-        border-color: white;
-        font-family: roboto-light;
-    }
-
-    #lateralDireita p {
-        display: inline-block;
-        color: black;
-        text-align: justify;
-        font-family: roboto-light;
-        font-size: 16px;
-        font-style: italic;
-    }
-
-    /*FOOTER*/
-
-    footer {
-        background: linear-gradient(0deg, #fff, 50%, #DEEEFE);
-        font-family: 'Rubik', sans-serif;
-        background: #DCDCDC;
-
-    }
-
-    #footer {
-        overflow: hidden;
-        text-align: center;
-        color: #627482;
-    }
-
-    #footer i {
-        color: grey;
-    }
-
-    #footer i:hover {
-        color: black;
-        transition: all 0.5s linear;
-    }
-
-    #footer a {
-        text-decoration: none;
-        color: black;
-    }
-
-    #facebook {
-        border: solid 1px #DCDCDC;
-    }
-
-    #facebookIcon {
-        color: #696969;
-    }
-
-    #facebookIcon:hover {
-        color: black;
-    }
-
-    #facebook:hover {
-        border-bottom: solid 1px black;
-        transition: all 0.5s linear;
-    }
-
-    #email {
-        border: solid 1px #DCDCDC;
-    }
-
-    #emailIcon {
-        color: #696969;
-    }
-
-    #emailIcon:hover {
-        color: black;
-    }
-
-    #email:hover {
-        border-bottom: solid 1px black;
-        transition: all 0.5s linear;
-    }
-
-    #whatsapp {
-        border: solid 1px #DCDCDC;
-    }
-
-    #whatsappIcon {
-        color: #696969;
-    }
-
-    #whatsappIcon:hover {
-        color: black;
-    }
-
-    #whatsapp:hover {
-        border-bottom: solid 1px black;
-        transition: all 0.5s linear;
-    }
-
-    #instagram {
-        border: solid 1px #DCDCDC;
-    }
-
-    #instagramIcon {
-        color: #696969;
-    }
-
-    #instagramIcon:hover {
-        color: black;
-    }
-
-    #instagram:hover {
-        border-bottom: solid 1px black;
-        transition: all 0.5s linear;
-    }
-
-/*CORPO*/
-
-    #corpo{
-         padding-left: 6%;
-         padding-right: 6%;
-         text-align:justify;
-         z-index:1;
-    }
-
-    #figcaption{
-        text-align:center;
-        font-size:11px;
-    }
-
-    #historiaGravuraLink{
-        color:black;
-        text-decoration:none;
-
-    }
-
-    #historiaGravuraLink h5{
-        color:black;
-        text-decoration:none;
-        border-bottom: solid 1px;
-        border-color: white;
-        font-weight: 700;
-    }
-
-    #historiaGravuraLink h5:hover{
-        border-bottom: solid 1px;
-        border-color: black;
-        display: inline-block;
-        color: black;
-        font-family: roboto-light;
-        transition: all 0.75s linear;
-    }
-
-    #tecnicaImpressaoLink{
-        color:black;
-        text-decoration:none;
-
-    }
-
-    #tecnicaImpressaoLink h3{
-        color:black;
-        text-decoration:none;
-        border-bottom: solid 1px;
-        border-color: white;
-        font-weight: 700;
-    }
-
-    #tecnicaImpressaoLink h3:hover{
-        border-bottom: solid 1px;
-        border-color: black;
-        display: inline-block;
-        color: black;
-        font-family: roboto-light;
-        transition: all 0.75s linear;
-    }
-
+/*!
+ * Start Bootstrap - Simple Sidebar (https://startbootstrap.com/template/simple-sidebar)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
+ */
+
+ #wrapper {
+    overflow-x: hidden;
+
+ }
+
+#sidebar-wrapper {
+  min-height: 100vh;
+  margin-left: -15rem;
+  -webkit-transition: margin .25s ease-out;
+  -moz-transition: margin .25s ease-out;
+  -o-transition: margin .25s ease-out;
+  transition: margin .25s ease-out;
+  background-color: rgb(48, 45, 45);
+  color:rgb(233, 231, 231);
+}
+
+#sidebar-wrapper .sidebar-heading {
+  padding: 0.875rem 1.25rem;
+  font-size: 1.2rem;
+}
+
+#sidebar-wrapper .list-group {
+  width: 15rem;
+}
+
+#page-content-wrapper {
+  min-width: 100vw;
+
+}
+
+nav{
+  background-color: rgb(48, 45, 45);
+}
+
+.dropdown{
+  background-color: rgb(48, 45, 45);
+}
+
+.nav-item a{
+  color:rgb(233, 231, 231);
+}
+
+#wrapper.toggled #sidebar-wrapper {
+  margin-left: 0;
+}
+
+@media (min-width: 768px) {
+  #sidebar-wrapper {
+    margin-left: 0;
+  }
+
+  #page-content-wrapper {
+    min-width: 0;
+    width: 100%;
+    background-color: rgb(218, 216, 216);
+  }
+
+  #wrapper.toggled #sidebar-wrapper {
+    margin-left: -15rem;
+    position:fixed;
+  }
+}
+
+.carousel-item{
+  text-align: center;
+}
+
+#textoIndex{
+  text-align: justify;
+}
+
+#esquerda a{
+  color:white;
+  background-color: rgb(48, 45, 45);
+}
+.dropdown-menu{
+  background-color: rgb(48, 45, 45);
+}
+.dropdown a{
+  color:rgb(233, 231, 231);
+
+}
+
+#menu-toggle{
+  background-color: rgb(218, 216, 216);
+}
