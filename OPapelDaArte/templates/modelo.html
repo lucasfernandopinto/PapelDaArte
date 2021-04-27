@@ -32,23 +32,27 @@
     <!-- Sidebar -->
 
     <div class="border-right" id="sidebar-wrapper">
-      <div class="sidebar-heading">Artistas</div>
+      <div class="sidebar-heading">
+        Artistas
+        {% if user.is_authenticated %}
+            <a href="/admin/core/artista/add/" style="float: right;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="white" class="bi bi-person-plus-fill" viewBox="0 0 16 16">
+                  <path d="M1 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H1zm5-6a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                  <path fill-rule="evenodd" d="M13.5 5a.5.5 0 0 1 .5.5V7h1.5a.5.5 0 0 1 0 1H14v1.5a.5.5 0 0 1-1 0V8h-1.5a.5.5 0 0 1 0-1H13V5.5a.5.5 0 0 1 .5-.5z"/>
+                </svg>
+            </a>
+        {% endif %}
+      </div>
+
+      <div id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0" nonce="ni1okPdp"></script>
+      <div class="fb-like" data-href="{{ request.get_full_path }}" data-width="0" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
+
+
       <div class="list-group list-group-flush" id="esquerda">
-        <a href="#" class="list-group-item list-group-item-action">Artista</a>
-        <a href="#" class="list-group-item list-group-item-action">Artista</a>
-        <a href="#" class="list-group-item list-group-item-action">Artista</a>
-        <a href="#" class="list-group-item list-group-item-action">Artista</a>
-        <a href="#" class="list-group-item list-group-item-action">Artista</a>
-        <a href="#" class="list-group-item list-group-item-action">Artista</a>
-        <a href="#" class="list-group-item list-group-item-action">Artista</a>
-        <a href="#" class="list-group-item list-group-item-action">Artista</a>
-        <a href="#" class="list-group-item list-group-item-action">Artista</a>
-        <a href="#" class="list-group-item list-group-item-action">Artista</a>
-        <a href="#" class="list-group-item list-group-item-action">Artista</a>
-        <a href="#" class="list-group-item list-group-item-action">Artista</a>
-        <a href="#" class="list-group-item list-group-item-action">Artista</a>
-        <a href="#" class="list-group-item list-group-item-action">Artista</a>
-        <a href="#" class="list-group-item list-group-item-action">Artista</a>
+        {% for artistas in artista %}
+          <a href="/Artistas/{{ artistas.art_sobrenome }}" class="list-group-item list-group-item-action">{{ artistas.art_sobrenome }}, {{ artistas.art_nome }}</a>
+        {% endfor %}
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -67,22 +71,22 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
             <li class="nav-item active">
-              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+              <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Julio Reis</a>
+              <a class="nav-link" href="/Julio-Reis">Julio Reis</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">O Papel da Arte</a>
+              <a class="nav-link" href="/O-Papel-da-Arte">O Papel da Arte</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Artigos</a>
+              <a class="nav-link" href="/Artigos">Artigos</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Entrevistas</a>
+              <a class="nav-link" href="/Entrevistas">Entrevistas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Notícias</a>
+              <a class="nav-link" href="/Noticias">Notícias</a>
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -90,9 +94,10 @@
                 Ver mais
               </a>
               <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="#">Emolduramento e Restauração</a>
-                <a class="dropdown-item" href="#">Técnicas de Impressão</a>
-                <a class="dropdown-item" href="#">História da Gravura</a>
+                <a class="dropdown-item" href="/Emolduramento-e-Restauracao">Emolduramento e Restauração</a>
+                <a class="dropdown-item" href="/Tecnicas-de-Impressao">Técnicas de Impressão</a>
+                <a class="dropdown-item" href="/Historia-da-Gravura">História da Gravura</a>
+                <a class="dropdown-item" href="/admin">Painel Administrativo</a>
               </div>
             </li>
           </ul>

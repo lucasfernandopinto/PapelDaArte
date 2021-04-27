@@ -5,21 +5,16 @@
           <div class="row justify-content-center">
             <div id="carouselExampleControls" class="carousel slide my-4 h-50" data-ride="carousel">
               <div class="carousel-inner h-100" role="listbox">
-                <div class="carousel-item active h-100">
-                  <a href="#"><img class="img-fluid" style="max-height:400px; max-width: 100%;"
-                      src="https://images.unsplash.com/photo-1603632088148-3680d7e5dda2?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=701&q=80"
-                      alt="First slide"></a>
-                </div>
-                <div class="carousel-item">
-                  <a href="#"><img class="img-fluid" style="max-height:400px; max-width: 100%;"
-                      src="https://images.unsplash.com/photo-1592194996308-7b43878e84a6?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDl8Ym84alFLVGFFMFl8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                      alt="First slide"></a>
-                </div>
-                <div class="carousel-item">
-                  <a href="#"><img class="img-fluid" style="max-height:400px; max-width: 100%;"
-                      src="https://images.unsplash.com/photo-1619017236031-6f55d516f49a?ixid=MnwxMjA3fDB8MHx0b3BpYy1mZWVkfDMyfGJvOGpRS1RhRTBZfHxlbnwwfHx8fA%3D%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60"
-                      alt="First slide"></a>
-                </div>
+                {% for obras in obras %}
+                  <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %} h-100">
+                    <a href="/Artistas/{{ obras.obr_artista }}">
+                      <img class="img-fluid" style="max-height:400px; max-width: 100%;"
+                           src="{{ obras.obr_img }}"
+                           alt="Obra {{ obras.obr_nome }} de {{ obras.obr_artista }}"
+                      />
+                    </a>
+                  </div>
+                {% endfor %}
               </div>
               <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
