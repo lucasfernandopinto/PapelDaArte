@@ -44,11 +44,6 @@
         {% endif %}
       </div>
 
-      <div id="fb-root"></div>
-      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0" nonce="ni1okPdp"></script>
-      <div class="fb-like" data-href="{{ request.get_full_path }}" data-width="0" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
-
-
       <div class="list-group list-group-flush" id="esquerda">
         {% for artistas in artista %}
           <a href="/Artistas/{{ artistas.art_sobrenome }}" class="list-group-item list-group-item-action">{{ artistas.art_sobrenome }}, {{ artistas.art_nome }}</a>
@@ -103,7 +98,9 @@
           </ul>
         </div>
       </nav>
-
+      <div class="mt-2 my-2" id="fb-root"></div>
+      <script async defer crossorigin="anonymous" src="https://connect.facebook.net/pt_BR/sdk.js#xfbml=1&version=v10.0" nonce="ni1okPdp"></script>
+      <div class="fb-like" data-href="{{ request.get_full_path }}" data-width="0" data-layout="button_count" data-action="like" data-size="small" data-share="true"></div>
       {% block content %}
       {% endblock %}
 

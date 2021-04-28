@@ -8,12 +8,12 @@ from django.db.models import Count
 
 
 class Artista(models.Model):
-    art_nome = models.CharField(max_length=100)
-    art_sobrenome = models.CharField(max_length=100)
-    art_imagem = models.ImageField(upload_to='Artistas')
-    art_desc = models.TextField(blank=True, null=True)
-    art_nascimento = models.IntegerField(null=True)
-    art_morte = models.IntegerField(null=True)
+    art_nome = models.CharField("Nome do artista", max_length=100)
+    art_sobrenome = models.CharField("Sobrenome do artista:", max_length=100)
+    art_imagem = models.ImageField("Imagem do artista:", upload_to='Artistas')
+    art_desc = models.TextField("Texto descritivo:", blank=True, null=True)
+    art_nascimento = models.IntegerField("Ano de nascimento", null=True)
+    art_morte = models.IntegerField("Ano de falecimento", null=True)
 
     class Meta:
         db_table = 'artista'
@@ -30,14 +30,18 @@ class ObrasManager(models.Manager):
 
 
 class Obras(models.Model):
-    obr_img = models.ImageField(upload_to='Obras')
-    obr_legenda = models.CharField(max_length=200, null=True)
-    obr_nome = models.CharField(max_length=200)
-    obr_ano = models.IntegerField(null=True)
-    obr_valor = models.FloatField(null=True)
-    obr_status = models.CharField(max_length=50, null=True)
-    obr_info = models.TextField(null=True)
-    obr_artista = models.ForeignKey(Artista, on_delete=models.CASCADE)
+    OPTIONS = (
+        ('D', 'Disponível'),
+        ('V', 'Vendida')
+    )
+    obr_img = models.ImageField("Selecione a obra:", upload_to='Obras')
+    obr_legenda = models.CharField("Legenda da obra", max_length=200, null=True)
+    obr_nome = models.CharField("Nome da obra:", max_length=200)
+    obr_ano = models.IntegerField("Ano de publicação:", null=True)
+    obr_valor = models.FloatField("Valor da obra:", null=True)
+    obr_status = models.CharField("Estado da obra:", max_length=50, null=True, choices=OPTIONS)
+    obr_info = models.TextField("Adicione as informações adicionais da obra:", null=True)
+    obr_artista = models.ForeignKey(Artista, on_delete=models.CASCADE, verbose_name='Artista:')
 
     objects = ObrasManager()
 
@@ -56,10 +60,15 @@ class NoticiaManager(models.Manager):
 
 
 class Noticia(models.Model):
-    not_nome = models.CharField(max_length=100)
-    not_tipo = models.CharField(max_length=15)
-    not_desc = models.TextField()
-    not_imagem = models.ImageField(upload_to='Artigos')
+    OPTIONS = (
+        ('N', 'Notícia'),
+        ('A', 'Artigo'),
+        ('E', 'Entrevista'),
+    )
+    not_nome = models.CharField("Nome da publicação:", max_length=100)
+    not_tipo = models.CharField("Selecione o tipo de publicação que deseja fazer:", max_length=1, choices=OPTIONS)
+    not_desc = models.TextField("Faça a descrição da sua publicação:")
+    not_imagem = models.ImageField("Selecione a imagem da publicação:", upload_to='Artigos')
 
     objects = NoticiaManager()
 
