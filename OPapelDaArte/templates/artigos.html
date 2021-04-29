@@ -1,16 +1,74 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+    {% extends 'modelo.html' %}
+    {% block content %}
 
-    {% include "model-head.html" %}
+    <div class="container-fluid">
+        <div class="row h-100">
+            <div class="col-sm-2"></div>
+            <div class="col-sm-8" id="corpo">
+                <h1>Artigos</h1>
+                <hr>
+                <div class="card mb-3">
+                  <div class="row no-gutters">
+                    <div class="col-sm-4 my-3" style="padding-left:10px;padding-right:10px;">
+                      <img src=".\static\restauracao\imagem1.jpg" class="card-img" alt="...">
+                    </div>
+                    <div class="col-sm-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="card mb-3">
+                  <div class="row no-gutters">
+                    <div class="col-sm-4 my-3" style="padding-left:10px;padding-right:10px;">
+                      <img src=".\static\restauracao\imagem1.jpg" class="card-img" alt="...">
+                    </div>
+                    <div class="col-sm-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <hr>
+                <div class="card mb-3">
+                  <div class="row no-gutters">
+                    <div class="col-sm-4 my-3" style="padding-left:10px;padding-right:10px;">
+                      <img src=".\static\restauracao\imagem1.jpg" class="card-img" alt="...">
+                    </div>
+                    <div class="col-sm-8">
+                      <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
 
-</head>
-<body>
-    {% include "model-header.html" %}
+                  <ul class="pagination">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Anterior">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Anterior</span>
+                      </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Próximo">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Próximo</span>
+                      </a>
+                    </li>
+                  </ul>
 
+            </div>
+        </div>
+    </div>
 
-    {% include "model-footer.html" %}
-
-</body>
-
-</html>
+    {% endblock %}
