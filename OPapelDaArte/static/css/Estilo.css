@@ -4,6 +4,14 @@
  * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-simple-sidebar/blob/master/LICENSE)
  */
 
+p{
+    text-align:justify;
+}
+
+p, h1, h2, h3, h4, h5, h5, span, a{
+    font-family: roboto-light;
+}
+
  #wrapper {
     overflow-x: hidden;
 
@@ -35,15 +43,47 @@
 }
 
 nav{
-  background-color: rgb(48, 45, 45);
+    background-color: rgb(48, 45, 45);
 }
 
-.dropdown{
-  background-color: rgb(48, 45, 45);
+#menu-toggle{
+    color:rgb(233, 231, 231);
+    cursor: pointer;
+}
+
+#drip{
+    background-color: rgb(48, 45, 45);
+}
+
+#drip a{
+    color:rgb(233, 231, 231);
+    border-bottom: solid 1px;
+    border-color: rgb(48, 45, 45);
+    display: inline-block;
+}
+
+#drip a:hover{
+    border-bottom: solid 1px;
+    border-color: color:rgb(233, 231, 231);
+    display: inline-block;
+    color:rgb(233, 231, 231);
+    background-color: rgb(48, 45, 45);
+    transition: all 0.75s linear;
 }
 
 .nav-item a{
-  color:rgb(233, 231, 231);
+    color:rgb(233, 231, 231);
+    border-bottom: solid 1px;
+    border-color: rgb(48, 45, 45);
+    display: inline-block;
+}
+
+.nav-item a:hover{
+    border-bottom: solid 1px;
+    border-color: color:rgb(233, 231, 231);
+    display: inline-block;
+    color:rgb(233, 231, 231);
+    transition: all 0.75s linear;
 }
 
 #wrapper.toggled #sidebar-wrapper {
@@ -76,17 +116,18 @@ nav{
 }
 
 #esquerda a{
-  color:white;
-  background-color: rgb(48, 45, 45);
-}
-.dropdown-menu{
-  background-color: rgb(48, 45, 45);
-}
-.dropdown a{
   color:rgb(233, 231, 231);
-
+  background-color: rgb(48, 45, 45);
 }
 
-#menu-toggle{
-  background-color: rgb(218, 216, 216);
+#figcaption{
+    font-size: 11px;
+}
+
+.card{
+    max-width: 100%;
+}
+
+.page-link {
+    color:rgb(48, 45, 45);
 }
