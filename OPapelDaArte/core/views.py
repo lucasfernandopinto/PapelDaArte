@@ -1,4 +1,5 @@
 from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 from django.shortcuts import render
 from core.models import Artista, Obras, Noticia
 import random
@@ -13,6 +14,28 @@ def index(request):
              'noticia': Noticia.objects.filter(id=aux.id),
              'obras': [Obras.objects.random(), Obras.objects.random(), Obras.objects.random()]}
     return render(request, 'index.html', dados)
+
+
+def teste(request):
+    return render(request, 'teste.html')
+
+
+def buscaArtistas(request):
+    busca = request.GET.get('busca', None)
+    artistas = Artista.objects.filter(art_sobrenome__startswith=busca)
+    resultado = ''
+    if artistas:
+        aux = 0
+        for artista in artistas:
+            aux += 1
+            resultado += '<a href="/Artistas/{}" class="list-group-item list-group-item-action">{}, {}</a>'.format(artista.art_sobrenome, artista.art_sobrenome, artista.art_nome)
+            print(resultado)
+            if aux == 10:
+                break
+    else:
+        resultado = "<br><center><h6>Sem resultados!</h6></center>"
+    dados = {'conteudo': resultado}
+    return JsonResponse(dados)
 
 
 def artista(request, art_sobrenome):

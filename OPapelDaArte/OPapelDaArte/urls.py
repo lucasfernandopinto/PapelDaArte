@@ -52,6 +52,7 @@ urlpatterns = [
     path('Tecnicas-de-Impressao/Serigrafia', views.serigrafia),
     path('Tecnicas-de-Impressao/Verniz-Mole', views.vernizMole),
     path('Tecnicas-de-Impressao/Xilogravura', views.xilogravura),
+    path('ajax', views.buscaArtistas),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 admin.site.site_header = 'Administração O Papel da Arte'

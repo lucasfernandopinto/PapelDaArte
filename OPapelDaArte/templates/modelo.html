@@ -45,9 +45,14 @@
       </div>
 
       <div class="list-group list-group-flush" id="esquerda">
-        {% for artistas in artista %}
-          <a href="/Artistas/{{ artistas.art_sobrenome }}" class="list-group-item list-group-item-action">{{ artistas.art_sobrenome }}, {{ artistas.art_nome }}</a>
-        {% endfor %}
+
+            <input type="text" id="busca" autocomplete="off">
+
+        <div id="artistas">
+          {% for artistas in artista %}
+            <a href="/Artistas/{{ artistas.art_sobrenome }}" class="list-group-item list-group-item-action">{{ artistas.art_sobrenome }}, {{ artistas.art_nome }}</a>
+          {% endfor %}
+        </div>
       </div>
     </div>
     <!-- /#sidebar-wrapper -->
@@ -121,6 +126,27 @@
       e.preventDefault();
       $("#wrapper").toggleClass("toggled");
     });
+  </script>
+  <script>
+      $(document).ready(function() {
+            $("#busca").change(function() {
+                busca = $("#busca").val()
+                n = busca.length;
+                if (n >= 0) {
+                    $.ajax({
+                        url: 'http://127.0.0.1:8000/ajax',
+                        data: {
+                            'busca': busca
+                        },
+                        dataType: 'json',
+                        success: function (dados) {
+                            $("#artistas").html(dados.conteudo);
+                        }
+                    })
+                    $("#busca").val('')
+                }
+            });
+      });
   </script>
 
 </body>
