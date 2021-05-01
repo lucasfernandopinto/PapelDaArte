@@ -1,7 +1,7 @@
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 from django.shortcuts import render
-from core.models import Artista, Obras, Noticia
+from core.models import Artista, Obra, Noticia
 import random
 
 
@@ -12,7 +12,7 @@ def index(request):
 
     dados = {'artista': Artista.objects.all(),
              'noticia': Noticia.objects.filter(id=aux.id),
-             'obras': [Obras.objects.random(), Obras.objects.random(), Obras.objects.random()]}
+             'obras': [Obra.objects.random(), Obra.objects.random(), Obra.objects.random()]}
     return render(request, 'index.html', dados)
 
 
@@ -42,7 +42,7 @@ def artista(request, art_sobrenome):
     aux = Noticia.objects.random()
     dados = {'artista': Artista.objects.all(),
              'artistaPrincipal': Artista.objects.filter(art_sobrenome=art_sobrenome),
-             'obras': Obras.objects.filter(obr_artista__in=Artista.objects.filter(art_sobrenome=art_sobrenome)),
+             'obras': Obra.objects.filter(obr_artista__in=Artista.objects.filter(art_sobrenome=art_sobrenome)),
              'noticia': Noticia.objects.filter(id=aux.id)}
     return render(request, 'artista.html', dados)
 
