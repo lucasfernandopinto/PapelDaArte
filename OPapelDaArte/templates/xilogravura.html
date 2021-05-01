@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+    {% extends 'modelo.html' %}
+    {% block content %}
 
-    {% include "model-head.html" %}
-
-</head>
-<body>
-    {% include "model-header.html" %}
-
-<div class="container-fluid h-80" style="position:fixed;"> {% include "model-esquerda.html" %} </div>
     <div class="container-fluid">
         <div class="row h-100">
             <div class="col-sm-2"></div>
@@ -61,14 +53,8 @@
                         DASILVA, Orlando. A Arte maior da Gravura: participação gráfica de Marcello Grassmann. São Paulo, ESPADE, 1976.
                     </p>
                 </div>
-            {% include "model-direita.html" %}
             </div>
         </div>
-
     </div>
 
-    {% include "model-footer.html" %}
-
-</body>
-
-</html>
+    {% endblock %}

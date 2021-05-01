@@ -1,35 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+    {% extends 'modelo.html' %}
+    {% block content %}
 
-    {% include "model-head.html" %}
+    <div class="container-fluid" style="min-height: 77%;">
+        <div class="row">
+            <div class="col-sm-2"></div>
+                <div class="col-sm-8" id="corpo">
+                    <h1>História da Gravura</h1>
+                    <hr>
 
-</head>
-<body>
-    {% include "model-header.html" %}
-
-     <div class="container-fluid h-80" style="position:fixed;"> {% include "model-esquerda.html" %} </div>
-            <div class="container-fluid" style="min-height: 77%;">
-                <div class="row">
-                    <div class="col-sm-2"></div>
-                        <div class="col-sm-8" id="corpo">
-                            <h1>História da Gravura</h1>
-                            <hr>
-
-                            <p>Abaixo você encontrará dois textos que resumem a história da gravura no Brasil e no mundo. Infelizmente, a dinâmica da Internet não nos permite ser tão longos.</p>
-                            <a href="Historia-da-Gravura/Seculo-19" id="historiaGravuraLink"><h5>Uma breve história da gravura até o século 19</h5></a>
-                            <p>A gravação de imagens em suportes como a pedra ou a madeira, para depois serem utilizados como matrizes de impressão sobre papel ou tecido, já era empregada pelos egípcios e conhecida pelos chineses desde…</p>
-                            <a href="Historia-da-Gravura/Brasil" id="historiaGravuraLink"><h5>Uma breve história da gravura no Brasil</h5></a>
-                            <p>A disciplina e os compromissos com o ensino que acompanham a técnica da gravura fazem dela um verdadeiro celeiro de propostas conceituais e pesquisas estéticas algumas vezes desprezadas pelo olhar apressado. A gravura é…</p>
-
-                        </div>
-            {% include "model-direita.html" %}
+                    <p>Abaixo você encontrará dois textos que resumem a história da gravura no Brasil e no mundo. Infelizmente, a dinâmica da Internet não nos permite ser tão longos.</p>
+                    <a href="Historia-da-Gravura/Seculo-19" id="historiaGravuraLink"><h5>Uma breve história da gravura até o século 19</h5></a>
+                    <p>A gravação de imagens em suportes como a pedra ou a madeira, para depois serem utilizados como matrizes de impressão sobre papel ou tecido, já era empregada pelos egípcios e conhecida pelos chineses desde…</p>
+                    <a href="Historia-da-Gravura/Brasil" id="historiaGravuraLink"><h5>Uma breve história da gravura no Brasil</h5></a>
+                    <p>A disciplina e os compromissos com o ensino que acompanham a técnica da gravura fazem dela um verdadeiro celeiro de propostas conceituais e pesquisas estéticas algumas vezes desprezadas pelo olhar apressado. A gravura é…</p>
                 </div>
             </div>
+        </div>
     </div>
 
-    {% include "model-footer.html" %}
-
-</body>
-
-</html>
+    {% endblock %}

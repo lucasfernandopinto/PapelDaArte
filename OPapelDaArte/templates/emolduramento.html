@@ -1,21 +1,15 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+    {% extends 'modelo.html' %}
+    {% block content %}
 
-    {% include "model-head.html" %}
-
-</head>
-<body>
-    {% include "model-header.html" %}
-
-     <div class="container-fluid h-80" style="position:fixed;"> {% include "model-esquerda.html" %} </div>
-            <div class="container-fluid">
-                <div class="row h-100">
-                    <div class="col-sm-2"></div>
-                    <div class="col-sm-8 h-100" id="corpo">
-                        <h1>Restauração</h1>
+    <div class="container-fluid">
+        <div class="row h-100">
+            <div class="col-sm-2"></div>
+                <div class="col-sm-8 h-100" id="corpo">
+                    <h1>Restauração</h1>
                         <hr>
-                        <p style="text-align: right;"><b>Julio Reis</b></p>
+                        <p style="text-align: right;">
+                            <b>Julio Reis</b>
+                        </p>
 
                         <p>
                             O PAPEL DA ARTE não quer apenas enriquecer sua coleção de obras de arte em papel, mas também ajudá-lo a cuidar desse acervo,
@@ -38,26 +32,27 @@
                             Veja abaixo a gravura em metal “Gabinete de Madame D´Azay Court”   de Francois Boucher  (www.francoisboucher.org), que estava
                             infestada de fungos e bactérias.</p>
 
-                            <div class="row">
-                                <div class="col-sm-6">
-                                    <center>
-                                        <figure>
-                                            <!--..\static\restauracao\imagem1.jpg - Caminho para pegar imagens salvas-->
-                                            <img src="..\static\restauracao\imagem1.jpg" alt="Detalhe antes e depois do emolduramento" height="187" width="300" >
-                                            <figcaption> Detalhe: Antes e Depois </figcaption>
-                                        </figure>
-                                    </center>
-                                </div>
-                                <div class="col-sm-6">
-                                    <center>
-                                        <figure>
-                                            <!--..\static\restauracao\imagem2.jpg - Caminho para pegar imagens salvas-->
-                                            <img src="..\static\restauracao\imagem2.jpg" alt="Área antes e depois do emolduramento" style="max-width: 500px;">
-                                            <figcaption> Área total: Antes e Depois </figcaption>
-                                        </figure>
-                                    </center>
-                                </div>
-                           </div>
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <center>
+                                    <figure>
+                                        <!--..\static\restauracao\imagem1.jpg - Caminho para pegar imagens salvas-->
+                                        <img src="..\static\restauracao\imagem1.jpg" alt="Detalhe antes e depois do emolduramento" height="187" width="300" >
+                                        <figcaption> Detalhe: Antes e Depois </figcaption>
+                                    </figure>
+                                </center>
+                            </div>
+
+                            <div class="col-sm-6">
+                                <center>
+                                    <figure>
+                                        <!--..\static\restauracao\imagem2.jpg - Caminho para pegar imagens salvas-->
+                                        <img src="..\static\restauracao\imagem2.jpg" alt="Área antes e depois do emolduramento" style="max-width: 500px;">
+                                        <figcaption> Área total: Antes e Depois </figcaption>
+                                    </figure>
+                                </center>
+                            </div>
+                        </div>
 
                         <h1>Emolduramento</h1>
                         <hr>
@@ -68,28 +63,23 @@
                         <p>É importante que você leve sua gravura a um moldureiro que entenda o mínimo de conservação  e utilize papéis adequados para emoldurar  corretamente  sua obra. Os custos realmente não são altos se você comparar com os gastos que teve na compra e restauro de sua gravura.  É como você comprar o carro dos seus sonhos e só abastecê-lo com gasolina adulterada, ou seja, em pouco tempo aparecerão problemas.</p>
                         <p>Conversei com o André Vincenti,  da Molducenter, empresa especializada em papéis especiais para emolduramento de gravuras, que me disse: ” – a vantagem de você usar um papel alcalino é que ele possui em sua constituição uma reserva maior de carbonato de cálcio, que inibirá por maior tempo a proliferação de fungos e a acidez do ambiente externo que atinge a gravura. Se você emoldurar por exemplo um pôster do Monet, poderá utilizar um paspatur comum não alcalino e com função meramente decorativa porém quando você for emoldurará uma gravura original, é realmente  importante o emprego de um paspatur alcalino, livre de acidez, que irá protegê-la da melhor forma possível contra ação dos fungos.”  </p>
 
-                            <figure style="float: left;text-align:center; padding-right:2%;">
-                                <img src="..\static\emolduramento\imagem1.jpg" alt="Área antes e depois do emolduramento" >
-                                <figcaption id="figcaption"> André Vincentti, da Molducenter </figcaption>
-                            </figure>
+                        <figure style="float: left;text-align:center; padding-right:2%;">
+                            <img src="..\static\emolduramento\imagem1.jpg" alt="Área antes e depois do emolduramento" >
+                            <figcaption id="figcaption"> André Vincentti, da Molducenter </figcaption>
+                        </figure>
 
-                                <p>André complementa que a função do paspatur é criar um micro clima dentro da moldura, porém somente sobre a área do desenho. Esse micro ambiente entre o vidro e a gravura é criado pelo uso do paspatur de 1 a 2 mm que deixará a gravura “respirar”.  Perguntei-lhe então quais são as etapas corretas para emoldurar uma gravura e ele me explicou que existem 5 passos básicos e fáceis do moldureiro seguir:</p>
-                                <p>1º Moldura: se quiser utilizar alguma moldura antiga, deve-se desinfetá-la antes e isolar com fita adesiva alcalina a área onde se encaixa o vidro e as demais partes do quadro.</p>
-                                <p>2º Vidro: jamais aproveite algum vidro usado.</p>
-                                <p>3º Paspatur: utilize paspatur livre de ácido/alcalino. Recomendamos a linha Select.</p>
-                                <p>4º Gravura</p>
-                                <p>Opcional: antes de colocar o fundo para fechar a gravura,  recomendamos o uso do Barrier,  um papel livre de acidez que funcionará como mais uma barreira de proteção contra os fungos.</p>
-                                <p>5º Fundo : sempre utilize o Foam Board que é uma placa de prolipropileno alcalino ou então um cartão micro ondulado alcalino. O fundo do quadro é a área mais importante a ser preservada pois é a entrada mais fácil de fungos e bactérias até a gravura.</p>
-                                <p>André informou também que na hora de fixar a gravura ao paspatur e depois fechar o fundo, “jamais deixe de trabalhar com fita adesiva alcalina, ou seja, livre de ácido. Nada de economizar usando a fita durex ou fita crepe utilizados em casa”, finaliza.</p>
-                                <p>Em breve informaremos  alguns contatos de bons moldureiros que trabalhem utilizando corretamente as técnicas e papéis adequados para emoldurar suas gravuras. Aguardem!</p>
+                        <p>André complementa que a função do paspatur é criar um micro clima dentro da moldura, porém somente sobre a área do desenho. Esse micro ambiente entre o vidro e a gravura é criado pelo uso do paspatur de 1 a 2 mm que deixará a gravura “respirar”.  Perguntei-lhe então quais são as etapas corretas para emoldurar uma gravura e ele me explicou que existem 5 passos básicos e fáceis do moldureiro seguir:</p>
+                        <p>1º Moldura: se quiser utilizar alguma moldura antiga, deve-se desinfetá-la antes e isolar com fita adesiva alcalina a área onde se encaixa o vidro e as demais partes do quadro.</p>
+                        <p>2º Vidro: jamais aproveite algum vidro usado.</p>
+                        <p>3º Paspatur: utilize paspatur livre de ácido/alcalino. Recomendamos a linha Select.</p>
+                        <p>4º Gravura</p>
+                        <p>Opcional: antes de colocar o fundo para fechar a gravura,  recomendamos o uso do Barrier,  um papel livre de acidez que funcionará como mais uma barreira de proteção contra os fungos.</p>
+                        <p>5º Fundo : sempre utilize o Foam Board que é uma placa de prolipropileno alcalino ou então um cartão micro ondulado alcalino. O fundo do quadro é a área mais importante a ser preservada pois é a entrada mais fácil de fungos e bactérias até a gravura.</p>
+                        <p>André informou também que na hora de fixar a gravura ao paspatur e depois fechar o fundo, “jamais deixe de trabalhar com fita adesiva alcalina, ou seja, livre de ácido. Nada de economizar usando a fita durex ou fita crepe utilizados em casa”, finaliza.</p>
+                        <p>Em breve informaremos  alguns contatos de bons moldureiros que trabalhem utilizando corretamente as técnicas e papéis adequados para emoldurar suas gravuras. Aguardem!</p>
 
-                        </div>
-                    {% include "model-direita.html" %}
                 </div>
             </div>
+        </div>
 
-    {% include "model-footer.html" %}
-
-</body>
-
-</html>
+    {% endblock %}
