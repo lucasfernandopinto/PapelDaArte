@@ -83,9 +83,19 @@ def emolduramento(request):
 
 
 def noticias(request):
-    aux = Noticia.objects.random()
+    #aux = Noticia.objects.random()
+    pagina = request.GET.get('pagina', None)
+    offset = 0
+    limit = 0
+    if(pagina > 1):
+        offset = (pagina - 1) * 4
+        limit = pagina * 4
+    else:
+        pagina = 0
+        limit = 4
     dados = {'artista': Artista.objects.all(),
-             'noticia': Noticia.objects.filter(id=aux.id)}
+             #'noticia': Noticia.objects.filter(id=aux.id)
+             'entrevistas': Noticia.objects.all()}
     return render(request, 'noticias.html', dados)
 
 
@@ -97,9 +107,24 @@ def artigos(request):
 
 
 def entrevistas(request):
-    aux = Noticia.objects.random()
+    #aux = Noticia.objects.random()
+    pagina = int(request.GET.get('pagina', None))
+    ordem = request.GET.get('ordenar_por', None)
+    offset = 0
+    limit = 0
+    if (pagina > 1):
+        offset = (pagina - 1) * 4
+        limit = pagina * 4
+    else:
+        offset = 0
+        limit = 4
+    if (ordem == 'data'):
+        resultado = Noticia.objects.filter(not_tipo='E').order_by(ordem)[offset:limit]
+    elif ( ordem == 'data_desc'):
+        pass
     dados = {'artista': Artista.objects.all(),
-             'noticia': Noticia.objects.filter(id=aux.id)}
+             #'noticia': Noticia.objects.filter(id=aux.id)
+             'entrevistas': Noticia.objects.filter(not_tipo='E').order_by('not_publi')[offset:limit]}
     return render(request, 'entrevistas.html', dados)
 
 
