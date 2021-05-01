@@ -83,32 +83,65 @@ def emolduramento(request):
 
 
 def noticias(request):
-    #aux = Noticia.objects.random()
+    # aux = Noticia.objects.random()
     pagina = request.GET.get('pagina', None)
+    if (pagina):
+        try:
+            pagina = int(pagina)
+        except:
+            pagina = 1
+    else:
+        pagina = 1
+    ordem = request.GET.get('ordenar_por', None)
     offset = 0
     limit = 0
-    if(pagina > 1):
+    if (pagina > 1):
         offset = (pagina - 1) * 4
         limit = pagina * 4
     else:
-        pagina = 0
+        offset = 0
         limit = 4
     dados = {'artista': Artista.objects.all(),
              #'noticia': Noticia.objects.filter(id=aux.id)
-             'entrevistas': Noticia.objects.all()}
+             'noticias': Noticia.objects.filter(not_tipo='N').order_by('-not_publi')[offset:limit]}
     return render(request, 'noticias.html', dados)
 
 
 def artigos(request):
-    aux = Noticia.objects.random()
+    # aux = Noticia.objects.random()
+    pagina = request.GET.get('pagina', None)
+    if (pagina):
+        try:
+            pagina = int(pagina)
+        except:
+            pagina = 1
+    else:
+        pagina = 1
+    ordem = request.GET.get('ordenar_por', None)
+    offset = 0
+    limit = 0
+    if (pagina > 1):
+        offset = (pagina - 1) * 4
+        limit = pagina * 4
+    else:
+        offset = 0
+        limit = 4
     dados = {'artista': Artista.objects.all(),
-             'noticia': Noticia.objects.filter(id=aux.id)}
+             #'noticia': Noticia.objects.filter(id=aux.id)
+             'noticias': Noticia.objects.filter(not_tipo='A').order_by('-not_publi')[offset:limit]}
     return render(request, 'artigos.html', dados)
 
 
 def entrevistas(request):
     #aux = Noticia.objects.random()
-    pagina = int(request.GET.get('pagina', None))
+    pagina = request.GET.get('pagina', None)
+    if (pagina):
+        try:
+            pagina = int(pagina)
+        except:
+            pagina = 1
+    else:
+        pagina = 1
     ordem = request.GET.get('ordenar_por', None)
     offset = 0
     limit = 0
@@ -124,7 +157,7 @@ def entrevistas(request):
         pass
     dados = {'artista': Artista.objects.all(),
              #'noticia': Noticia.objects.filter(id=aux.id)
-             'entrevistas': Noticia.objects.filter(not_tipo='E').order_by('not_publi')[offset:limit]}
+             'noticias': Noticia.objects.filter(not_tipo='E').order_by('-not_publi')[offset:limit]}
     return render(request, 'entrevistas.html', dados)
 
 

@@ -69,7 +69,7 @@ class Noticia(models.Model):
     not_tipo = models.CharField("Selecione o tipo de publicação que deseja fazer:", max_length=1, choices=OPTIONS)
     not_desc = models.TextField("Faça a descrição da sua publicação:")
     not_imagem = models.ImageField("Selecione a imagem da publicação:", upload_to='Artigos')
-    not_publi = models.DateField("Data de publicação", auto_now=True)
+    not_publi = models.DateField("Data de publicação")
 
     objects = NoticiaManager()
 
