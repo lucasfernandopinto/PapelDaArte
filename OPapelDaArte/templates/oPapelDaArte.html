@@ -1,14 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+    {% extends 'modelo.html' %}
+    {% block content %}
 
-    {% include "model-head.html" %}
-
-</head>
-<body>
-    {% include "model-header.html" %}
-
-<div class="container-fluid h-80" style="position:fixed;"> {% include "model-esquerda.html" %} </div>
     <div class="container-fluid">
         <div class="row h-100">
             <div class="col-sm-2"></div>
@@ -17,7 +9,7 @@
                     <hr>
                     <figure style="height:52%; text-align:center;">
                         <img src="..\static\sobre\papel.jpg" style="height: 90%;" alt="imagen dos grandes mestres da gravura brasileira em uma mesa de jantar" >
-                        <figcaption id="figcaption"> <!-- style="max-width:50%;" --> Claudio Correia e Castro, Anísio Medeiros, Poty, Lívio Abramo, Fayga
+                        <figcaption class="figcaption"> <!-- style="max-width:50%;" --> Claudio Correia e Castro, Anísio Medeiros, Poty, Lívio Abramo, Fayga
                             Ostrower, Oswaldo Goeldi, Ligia Pape, Darel, Iberê Camargo e Marcelo Grassmann. Foto gentilmente cedida pelo Projeto Goeldi. </figcaption>
                     </figure>
                     <p>
@@ -38,16 +30,8 @@
                     </p>
                     <p style="text-align: right;"><b>Julio Reis</b></p>
                 </div>
-                {% include "model-direita.html" %}
             </div>
         </div>
-
     </div>
 
-    <br><br>
-
-    {% include "model-footer.html" %}
-
-</body>
-
-</html>
+    {% endblock %}
