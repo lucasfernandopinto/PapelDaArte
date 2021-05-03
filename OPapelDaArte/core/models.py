@@ -29,7 +29,7 @@ class ObrasManager(models.Manager):
         return self.all()[random_index]
 
 
-class Obras(models.Model):
+class Obra(models.Model):
     OPTIONS = (
         ('D', 'Disponível'),
         ('V', 'Vendida')
@@ -46,7 +46,7 @@ class Obras(models.Model):
     objects = ObrasManager()
 
     class Meta:
-        db_table = 'obras'
+        db_table = 'obra'
 
     def __str__(self):
         return self.obr_nome
@@ -66,10 +66,10 @@ class Noticia(models.Model):
         ('E', 'Entrevista'),
     )
     not_nome = models.CharField("Nome da publicação:", max_length=100)
-    not_tipo = models.CharField("Selecione o tipo de publicação que deseja fazer:", max_length=1, choices=OPTIONS)
+    not_tipo = models.CharField("Tipo da publicação:", max_length=1, choices=OPTIONS)
     not_desc = models.TextField("Faça a descrição da sua publicação:")
     not_imagem = models.ImageField("Selecione a imagem da publicação:", upload_to='Artigos')
-    not_publi = models.DateField("Data de publicação", auto_now=True)
+    not_publi = models.DateField("Data de publicação")
 
     objects = NoticiaManager()
 
