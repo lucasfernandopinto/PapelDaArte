@@ -109,7 +109,7 @@ def noticias(request):
 
 def artigos(request):
     # aux = Noticia.objects.random()
-    pagina = request.GET.get('pagina', None)
+    pagina = request.GET.get('p', None)
     if (pagina):
         try:
             pagina = int(pagina)

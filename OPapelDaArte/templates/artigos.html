@@ -5,10 +5,7 @@
         <div class="row h-100">
             <div class="col-sm-2"></div>
             <div class="col-sm-8" id="corpo">
-<<<<<<< HEAD
-<<<<<<< Updated upstream
-=======
->>>>>>> f75dca04a7dc0aed44d4ab8bddb881537860336d
+
                 <h1>
                     Artigos
                     {% if user.is_authenticated %}
@@ -20,15 +17,7 @@
                         </a>
                     {% endif %}
                 </h1>
-<<<<<<< HEAD
-=======
-                <h1>Artigos</h1>
-<<<<<<< Updated upstream
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> f75dca04a7dc0aed44d4ab8bddb881537860336d
+
                 {% for artigo in noticias %}
                     <hr>
                     <div class="card mb-3">
@@ -46,6 +35,14 @@
                     </div>
                 {% endfor %}
 
+                <script>
+                    var passaValor= function(valor)
+                    {
+                        window.location = "/Artigos?p="+valor;
+                    }
+
+                </script>
+
                 <div style="text-align: center;">
                   <ul class="pagination">
                     <li class="page-item">
@@ -54,9 +51,7 @@
                         <span class="sr-only">Anterior</span>
                       </a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a id="teste" class="page-link" onClick="passaValor(2)">1</a></li>
                     <li class="page-item">
                       <a class="page-link" href="#" aria-label="Próximo">
                         <span aria-hidden="true">&raquo;</span>
