@@ -35,23 +35,14 @@
                     </div>
                 {% endfor %}
 
-                <script>
-                    var passaValor= function(valor)
-                    {
-                        window.location = "/Artigos?p="+valor;
-                    }
-
-                </script>
-
                 <div style="text-align: center;">
                   <ul class="pagination">
                     <li class="page-item">
-                      <a class="page-link" href="#" aria-label="Anterior">
+                      <a class="page-link"  href="#" aria-label="Anterior">
                         <span aria-hidden="true">&laquo;</span>
                         <span class="sr-only">Anterior</span>
                       </a>
                     </li>
-                    <li class="page-item"><a id="teste" class="page-link" onClick="passaValor(2)">1</a></li>
                     <li class="page-item">
                       <a class="page-link" href="#" aria-label="Próximo">
                         <span aria-hidden="true">&raquo;</span>

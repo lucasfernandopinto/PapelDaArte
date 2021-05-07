@@ -10,6 +10,7 @@ p{
 
 p, h1, h2, h3, h4, h5, h5, span, a{
     font-family: roboto-light;
+    font-size: 18px;
 }
 
  #wrapper {
@@ -130,4 +131,25 @@ nav{
 
 .page-link {
     color:rgb(48, 45, 45);
+}
+
+.figcaption{
+    font-size: 11px;
+}
+
+.tecnicaImpressaoLink{
+
+    color: black;
+}
+
+.tecnicaImpressaoLink:hover{
+    text-decoration: none;
+}
+
+html,body{
+    background-color: rgb(218, 216, 216);
+}
+
+html img{
+    border: 10px outset #808080;
 }
