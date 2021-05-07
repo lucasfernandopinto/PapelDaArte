@@ -36,9 +36,24 @@
                 {% endfor %}
 
                 <script>
-                    var passaValor= function(valor)
+                    aux = {{ paginaAtual }}
+
+                    var primeiraPagina= function()
+                    {
+                        window.location = "/Artigos?p=1";
+                    }
+                    var ultimaPagina= function(valor)
                     {
                         window.location = "/Artigos?p="+valor;
+                    }
+                    var mudaPagina= function(valor)
+                    {
+                        aux = aux + valor
+                        if ( aux > {{ nPaginas }} ) {
+                            window.location = "/Artigos?p="+{{ nPaginas }};
+                        } else {
+                            window.location = "/Artigos?p="+aux;
+                        }
                     }
 
                 </script>
@@ -46,16 +61,28 @@
                 <div style="text-align: center;">
                   <ul class="pagination">
                     <li class="page-item">
-                      <a class="page-link" href="#" aria-label="Anterior">
+                      <a class="page-link" aria-label="Primeira" onclick="primeiraPagina()">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Primeira</span>
+                      </a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" aria-label="Anterior" onclick="mudaPagina(-1)">
                         <span aria-hidden="true">&laquo;</span>
                         <span class="sr-only">Anterior</span>
                       </a>
                     </li>
-                    <li class="page-item"><a id="teste" class="page-link" onClick="passaValor(2)">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">{{ paginaAtual }}</a></li>
                     <li class="page-item">
-                      <a class="page-link" href="#" aria-label="Próximo">
+                      <a class="page-link" aria-label="Próximo" onclick="mudaPagina(1)">
                         <span aria-hidden="true">&raquo;</span>
                         <span class="sr-only">Próximo</span>
+                      </a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" aria-label="Último" onclick="ultimaPagina({{ nPaginas }})">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Último</span>
                       </a>
                     </li>
                   </ul>
