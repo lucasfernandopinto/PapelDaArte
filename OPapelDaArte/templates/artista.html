@@ -12,13 +12,10 @@
                         <div>
                             <figure style="float: left; width: 30%; margin-right: 2%;">
                                 <img src="{{ artistaPrincipal.art_imagem.url }}" style="width: 100%;" alt="Imagem do Artista {{ artistaPrincipal.art_nome }} {{ artistaPrincipal.art_sobrenome }}" >
-                                <figcaption style="text-align: center;" class="figcaption"> Descrição bem longa da imagem posicionada abaicxo da imagem </figcaption>
+                                <figcaption style="text-align: center;" class="figcaption"> {{ artistaPrincipal.art_legenda }} </figcaption>
                             </figure>
                             <p class="mr-5">{{ artistaPrincipal.art_desc|safe }}</p>
                         </div>
-                    </div>
-                    <div class="row">
-                        <p>Lorem</p>
                     </div>
                     <h4> Obras de {{ artistaPrincipal.art_sobrenome }}:
                         {% if user.is_authenticated %}

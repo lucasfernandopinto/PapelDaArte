@@ -7,14 +7,17 @@
             <div class="col-sm-2"></div>
                 <div class="col-sm-8" id="corpo">
                     <h1>{{ noticia.not_nome }}</h1>
+                    <small>{{ noticia.not_publi }}</small>
                     <hr>
                     <center>
                         <figure style="width: 25%; text-align: center;">
                             <img src="{{ noticia.not_imagem.url }}" style="width: 100%;">
-                            <figcaption class="figcaption"></figcaption>
+                            <figcaption class="figcaption">{{ noticia.not_legenda }}</figcaption>
                         </figure>
                     </center>
-                  <p></p>
+                  <p>
+                      {{ noticia.not_desc | safe }}
+                  </p>
                 </div>
             </div>
         </div>
