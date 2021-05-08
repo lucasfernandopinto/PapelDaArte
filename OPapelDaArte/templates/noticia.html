@@ -1,16 +1,16 @@
     {% extends 'modelo.html' %}
     {% block content %}
 
+    {% for noticia in noticia %}
     <div class="container-fluid">
         <div class="row h-100">
             <div class="col-sm-2"></div>
                 <div class="col-sm-8" id="corpo">
-                    <h1>Título</h1>
+                    <h1>{{ noticia.not_nome }}</h1>
                     <hr>
-
                     <center>
                         <figure style="width: 25%; text-align: center;">
-                            <img src="#" style="width: 100%;">
+                            <img src="{{ noticia.not_imagem.url }}" style="width: 100%;">
                             <figcaption class="figcaption"></figcaption>
                         </figure>
                     </center>
@@ -19,5 +19,6 @@
             </div>
         </div>
     </div>
+    {% endfor %}
 
     {% endblock %}

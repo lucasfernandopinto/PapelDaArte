@@ -20,19 +20,22 @@
 
                 {% for artigo in noticias %}
                     <hr>
-                    <div class="card mb-3">
-                      <div class="row no-gutters">
-                        <div class="col-sm-4 my-3" style="padding-left:10px;padding-right:10px;">
-                          <img src="{{ artigo.not_imagem.url }}" class="card-img" alt="Imagem da {{ artigo.not_nome }}">
-                        </div>
-                        <div class="col-sm-8">
-                          <div class="card-body">
-                            <h5 class="card-title">{{ artigo.not_nome }}</h5>
-                            <div class="card-text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">{{ artigo.not_desc | safe }}</div>
+                    <a href="Artigos/{{ artigo.id }}">
+                        <div class="card mb-3">
+                          <div class="row no-gutters">
+                            <div class="col-sm-4 my-3" style="padding-left:10px;padding-right:10px;">
+                              <img src="{{ artigo.not_imagem.url }}" class="card-img" alt="Imagem da {{ artigo.not_nome }}">
+                            </div>
+                            <div class="col-sm-8">
+                              <div class="card-body">
+                                <h5 class="card-title">{{ artigo.not_nome }}</h5>
+                                <div class="card-text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">{{ artigo.not_desc | safe }}</div>
+                              </div>
+                            </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
+                   </a>
+
                 {% endfor %}
 
                 <script>

@@ -77,6 +77,7 @@ nav{
     border-bottom: solid 1px;
     border-color: rgb(48, 45, 45);
     display: inline-block;
+    font-size: 20px;
 }
 
 .nav-item a:hover{
@@ -148,8 +149,60 @@ nav{
 
 html,body{
     background-color: rgb(218, 216, 216);
+
 }
 
 html img{
-    border: 10px outset #808080;
+    border: 7px outset #808080;
+}
+
+footer {
+    background-color: rgb(48, 45, 45);
+}
+
+#footer {
+    overflow: hidden;
+    color: #627482 !important;
+    display: inline-block;
+}
+
+
+#footer i:hover {
+    color: black;
+    transition: all 0.5s linear;
+}
+
+#footer a {
+    text-decoration: none;
+    color: lightgrey;
+    border-bottom: solid 1px;
+    border-color: rgb(48, 45, 45);
+}
+
+#footer a:hover {
+    border-bottom: solid 1px;
+    transition: all 0.5s linear;
+    border-color: lightgrey;
+}
+
+#busca{
+    position: relative;
+    margin-left: 17px;
+}
+
+.page-item{
+    cursor: pointer;
+}
+
+.tecnicaImpressaoLink{
+    color: black;
+    border-bottom: solid 1px;
+    border-color: rgb(218, 216, 216);
+}
+
+.tecnicaImpressaoLink:hover{
+    color: black;
+    border-bottom: solid 1px;
+    transition: all 0.5s linear;
+    border-color: rgb(218, 216, 216);
 }

@@ -7,7 +7,7 @@
             <div class="col-sm-8" id="corpo">
 
                 <h1>
-                    Notícias {{ nPaginas }}
+                    Notícias
                     {% if user.is_authenticated %}
                         <a href="/admin/core/noticia/add/" style="float: right;">
                             <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
@@ -36,25 +36,59 @@
                     </div>
                 {% endfor %}
 
+                <script>
+                    aux = {{ paginaAtual }}
+
+                    var primeiraPagina= function()
+                    {
+                        window.location = "/Noticias?p=1";
+                    }
+                    var ultimaPagina= function(valor)
+                    {
+                        window.location = "/Noticias?p="+valor;
+                    }
+                    var mudaPagina= function(valor)
+                    {
+                        aux = aux + valor
+                        if ( aux > {{ nPaginas }} ) {
+                            window.location = "/Noticias?p="+{{ nPaginas }};
+                        } else {
+                            window.location = "/Noticias?p="+aux;
+                        }
+                    }
+
+                </script>
+
                 <div style="text-align: center;">
                   <ul class="pagination">
                     <li class="page-item">
-                      <a class="page-link" href="#" aria-label="Anterior">
+                      <a class="page-link" aria-label="Primeira" onclick="primeiraPagina()">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Primeira</span>
+                      </a>
+                    </li>
+                    <li class="page-item">
+                      <a class="page-link" aria-label="Anterior" onclick="mudaPagina(-1)">
                         <span aria-hidden="true">&laquo;</span>
                         <span class="sr-only">Anterior</span>
                       </a>
                     </li>
-                    <li class="page-item"><a class="page-link" href="#">1</a></li>
-                    <li class="page-item"><a class="page-link" href="#">2</a></li>
-                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item"><a class="page-link" href="#">{{ paginaAtual }}</a></li>
                     <li class="page-item">
-                      <a class="page-link" href="#" aria-label="Próximo">
+                      <a class="page-link" aria-label="Próximo" onclick="mudaPagina(1)">
                         <span aria-hidden="true">&raquo;</span>
                         <span class="sr-only">Próximo</span>
                       </a>
                     </li>
+                    <li class="page-item">
+                      <a class="page-link" aria-label="Último" onclick="ultimaPagina({{ nPaginas }})">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Último</span>
+                      </a>
+                    </li>
                   </ul>
                 </div>
+
             </div>
         </div>
     </div>

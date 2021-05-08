@@ -178,9 +178,9 @@ def entrevistas(request):
 
 
 def verNoticia(request, id):
-    dados = {'artista': Artista.objects.all(),
+    dados = {'artista': Artista.objects.all().order_by('art_sobrenome')[0:15],
              'noticia': Noticia.objects.filter(id=id)}
-    return render(request, 'artista.html', dados)
+    return render(request, 'noticia.html', dados)
 
 
 def historiaSeculo19(request):

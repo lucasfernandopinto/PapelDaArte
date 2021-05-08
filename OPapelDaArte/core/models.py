@@ -14,6 +14,7 @@ class Artista(models.Model):
     art_desc = models.TextField("Texto descritivo:", blank=True, null=True)
     art_nascimento = models.IntegerField("Ano de nascimento", null=True)
     art_morte = models.IntegerField("Ano de falecimento", null=True)
+    art_legenda = models.CharField("Legenda do Artista", max_length=200, null=True)
 
     class Meta:
         db_table = 'artista'
@@ -70,6 +71,7 @@ class Noticia(models.Model):
     not_desc = models.TextField("Faça a descrição da sua publicação:")
     not_imagem = models.ImageField("Selecione a imagem da publicação:", upload_to='Artigos')
     not_publi = models.DateField("Data de publicação")
+    not_legenda = models.CharField("Legenda da noticia", max_length=200, null=True)
 
     objects = NoticiaManager()
 
