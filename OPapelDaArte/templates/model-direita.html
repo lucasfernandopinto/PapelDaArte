@@ -1,11 +1,9 @@
-
-
 <div class="col-sm-2 h-50" id="lateralDireita">
     {% for noticia in noticia %}
     <img src="{{ noticia.not_imagem }}" class="img-fluid my-3" id="imgLateral" style="max-height: 25%; overflow: hidden;">
-        <a href="#">
-            <h6>{{ noticia.not_nome }}</h6>
-            <p style="font-size: 13px; ">{{ noticia.not_desc | slice:"0:220" | safe }}...</p>
-        </a>
+    <a href="#">
+        <h6>{{ noticia.not_nome }}</h6>
+        <p style="font-size: 13px; ">{{ noticia.not_desc | slice:"0:220" | safe }}...</p>
+    </a>
     {% endfor %}
 </div>

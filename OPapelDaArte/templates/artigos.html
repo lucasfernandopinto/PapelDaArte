@@ -9,32 +9,32 @@
                 <h1>
                     Artigos
                     {% if user.is_authenticated %}
-                        <a href="/admin/core/noticia/add/" style="float: right;">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
-                              <path d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5z"/>
-                              <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
-                            </svg>
-                        </a>
+                    <a href="/admin/core/noticia/add/" style="float: right;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
+                            <path d="M8 6.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V11a.5.5 0 0 1-1 0V9.5H6a.5.5 0 0 1 0-1h1.5V7a.5.5 0 0 1 .5-.5z"/>
+                            <path d="M14 4.5V14a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h5.5L14 4.5zm-3 0A1.5 1.5 0 0 1 9.5 3V1H4a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V4.5h-2z"/>
+                        </svg>
+                    </a>
                     {% endif %}
                 </h1>
 
                 {% for artigo in noticias %}
-                    <hr>
-                    <a href="Artigos/{{ artigo.id }}">
-                        <div class="card mb-3">
-                          <div class="row no-gutters">
+                <hr>
+                <a href="Artigos/{{ artigo.id }}"  class = "tecnicaImpressaoLink">
+                    <div class="card mb-3">
+                        <div class="row no-gutters">
                             <div class="col-sm-4 my-3" style="padding-left:10px;padding-right:10px;">
-                              <img src="{{ artigo.not_imagem.url }}" class="card-img" alt="Imagem da {{ artigo.not_nome }}">
+                                <img src="{{ artigo.not_imagem.url }}" class="card-img" alt="Imagem da {{ artigo.not_nome }}">
                             </div>
                             <div class="col-sm-8">
-                              <div class="card-body">
-                                <h5 class="card-title">{{ artigo.not_nome }}</h5>
-                                <div class="card-text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">{{ artigo.not_desc | safe }}</div>
-                              </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">{{ artigo.not_nome }}</h5>
+                                    <div class="card-text" style="overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 5; -webkit-box-orient: vertical;">{{ artigo.not_desc | safe }}</div>
+                                </div>
                             </div>
-                          </div>
                         </div>
-                   </a>
+                    </div>
+                </a>
 
                 {% endfor %}
 
@@ -62,33 +62,33 @@
                 </script>
 
                 <div style="text-align: center;">
-                  <ul class="pagination">
-                    <li class="page-item">
-                      <a class="page-link" aria-label="Primeira" onclick="primeiraPagina()">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Primeira</span>
-                      </a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" aria-label="Anterior" onclick="mudaPagina(-1)">
-                        <span aria-hidden="true">&laquo;</span>
-                        <span class="sr-only">Anterior</span>
-                      </a>
-                    </li>
-                    <li class="page-item"><a class="page-link" href="#">{{ paginaAtual }}</a></li>
-                    <li class="page-item">
-                      <a class="page-link" aria-label="Próximo" onclick="mudaPagina(1)">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Próximo</span>
-                      </a>
-                    </li>
-                    <li class="page-item">
-                      <a class="page-link" aria-label="Último" onclick="ultimaPagina({{ nPaginas }})">
-                        <span aria-hidden="true">&raquo;</span>
-                        <span class="sr-only">Último</span>
-                      </a>
-                    </li>
-                  </ul>
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" aria-label="Primeira" onclick="primeiraPagina()">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Primeira</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" aria-label="Anterior" onclick="mudaPagina(-1)">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Anterior</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">{{ paginaAtual }}</a></li>
+                        <li class="page-item">
+                            <a class="page-link" aria-label="Próximo" onclick="mudaPagina(1)">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Próximo</span>
+                            </a>
+                        </li>
+                        <li class="page-item">
+                            <a class="page-link" aria-label="Último" onclick="ultimaPagina({{ nPaginas }})">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Último</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
