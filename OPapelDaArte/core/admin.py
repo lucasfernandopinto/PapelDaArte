@@ -4,8 +4,8 @@ from core.models import Artista, Obra, Noticia
 # Register your models here.
 
 class artistaAdmin(admin.ModelAdmin):
-    list_display = ('art_nome', 'art_sobrenome')
-    search_fields = ['art_nome', 'art_sobrenome']
+    list_display = ('art_nome',)
+    search_fields = ['art_nome', ]
 
 class obraAdmin(admin.ModelAdmin):
     list_display = ('obr_nome', 'obr_ano', 'obr_status', 'obr_artista')

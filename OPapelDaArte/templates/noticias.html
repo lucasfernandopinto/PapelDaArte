@@ -6,7 +6,7 @@
             <div class="col-sm-2"></div>
             <div class="col-sm-8" id="corpo">
                 <h1>
-                    Notícias
+                    Publicações
                     {% if user.is_authenticated %}
                     <a href="/admin/core/noticia/add/" style="float: right;">
                         <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="black" class="bi bi-file-earmark-plus" viewBox="0 0 16 16">
@@ -16,8 +16,15 @@
                     </a>
                     {% endif %}
                 </h1>
+                <small>
+                    <a href="Artigos">Artigos</a>
+                    <a href="Entrevistas">Entrevistas</a>
+                </small>
+                <input type="text" id="buscaPubli" autocomplete="off"><button onclick="buscaPubli($('#buscaPubli').val())"> Buscar </button>
 
-
+                {% if auxBusca == 2 %}
+                <h1>Nenhum resultado foi encontrado para essa busca!</h1>
+                {% endif %}
                 {% for noticia in noticias %}
                 <a href="Noticias/{{ noticia.id }}" class = "tecnicaImpressaoLink">
                     <hr>
@@ -40,58 +47,64 @@
                 <script>
                     aux = {{ paginaAtual }}
 
+                    var buscaPubli= function(texto)
+                    {
+                        window.location = "/Publicações?b="+texto;
+                    }
+
                     var primeiraPagina= function()
                     {
-                        window.location = "/Noticias?p=1";
+                        window.location = "/Publicações?p=1";
                     }
                     var ultimaPagina= function(valor)
                     {
-                        window.location = "/Noticias?p="+valor;
+                        window.location = "/Publicações?p="+valor;
                     }
                     var mudaPagina= function(valor)
                     {
                         aux = aux + valor
                         if ( aux > {{ nPaginas }} ) {
-                            window.location = "/Noticias?p="+{{ nPaginas }};
+                            window.location = "/Publicações?p="+{{ nPaginas }};
                         } else {
-                            window.location = "/Noticias?p="+aux;
+                            window.location = "/Publicações?p="+aux;
                         }
                     }
 
                 </script>
+                {% if auxBusca == 0 %}
+                    <div style="text-align: center;">
+                        <ul class="pagination">
+                            <li class="page-item">
+                                <a class="page-link" aria-label="Primeira" onclick="primeiraPagina()">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Primeira</span>
+                                </a>
+                            </li>
 
-                <div style="text-align: center;">
-                    <ul class="pagination">
-                        <li class="page-item">
-                            <a class="page-link" aria-label="Primeira" onclick="primeiraPagina()">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Primeira</span>
-                            </a>
-                        </li>
+                            <li class="page-item">
+                                <a class="page-link" aria-label="Anterior" onclick="mudaPagina(-1)">
+                                    <span aria-hidden="true">&laquo;</span>
+                                    <span class="sr-only">Anterior</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">{{ paginaAtual }}</a></li>
 
-                        <li class="page-item">
-                            <a class="page-link" aria-label="Anterior" onclick="mudaPagina(-1)">
-                                <span aria-hidden="true">&laquo;</span>
-                                <span class="sr-only">Anterior</span>
-                            </a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">{{ paginaAtual }}</a></li>
+                            <li class="page-item">
+                                <a class="page-link" aria-label="Próximo" onclick="mudaPagina(1)">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Próximo</span>
+                                </a>
+                            </li>
 
-                        <li class="page-item">
-                            <a class="page-link" aria-label="Próximo" onclick="mudaPagina(1)">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Próximo</span>
-                            </a>
-                        </li>
-
-                        <li class="page-item">
-                            <a class="page-link" aria-label="Último" onclick="ultimaPagina({{ nPaginas }})">
-                                <span aria-hidden="true">&raquo;</span>
-                                <span class="sr-only">Último</span>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+                            <li class="page-item">
+                                <a class="page-link" aria-label="Último" onclick="ultimaPagina({{ nPaginas }})">
+                                    <span aria-hidden="true">&raquo;</span>
+                                    <span class="sr-only">Último</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                {% endif %}
             </div>
         </div>
     </div>

@@ -9,7 +9,6 @@ from django.db.models import Count
 
 class Artista(models.Model):
     art_nome = models.CharField("Nome do artista", max_length=100)
-    art_sobrenome = models.CharField("Sobrenome do artista:", max_length=100)
     art_imagem = models.ImageField("Imagem do artista:", upload_to='Artistas')
     art_desc = models.TextField("Texto descritivo:", blank=True, null=True)
     art_nascimento = models.IntegerField("Ano de nascimento", null=True)
@@ -20,7 +19,7 @@ class Artista(models.Model):
         db_table = 'artista'
 
     def __str__(self):
-        return self.art_sobrenome
+        return self.art_nome
 
 
 class ObrasManager(models.Manager):
@@ -37,7 +36,7 @@ class Obra(models.Model):
     )
     obr_img = models.ImageField("Selecione a obra:", upload_to='Obras')
     obr_legenda = models.CharField("Legenda da obra", max_length=200, null=True)
-    obr_nome = models.CharField("Nome da obra:", max_length=200)
+    obr_nome = models.CharField("Título da obra:", max_length=200)
     obr_ano = models.IntegerField("Ano de publicação:", null=True)
     obr_valor = models.FloatField("Valor da obra:", null=True)
     obr_status = models.CharField("Estado da obra:", max_length=50, null=True, choices=OPTIONS)
@@ -62,11 +61,10 @@ class NoticiaManager(models.Manager):
 
 class Noticia(models.Model):
     OPTIONS = (
-        ('N', 'Notícia'),
         ('A', 'Artigo'),
         ('E', 'Entrevista'),
     )
-    not_nome = models.CharField("Nome da publicação:", max_length=100)
+    not_nome = models.CharField("Título da publicação:", max_length=100)
     not_tipo = models.CharField("Tipo da publicação:", max_length=1, choices=OPTIONS)
     not_desc = models.TextField("Faça a descrição da sua publicação:")
     not_imagem = models.ImageField("Selecione a imagem da publicação:", upload_to='Artigos')
