@@ -44,7 +44,7 @@
                                     {{ obras.obr_info|safe }}
                                 </div>
                                 {% if obras.obr_status == 'D' %}
-                                <h5> R$ {{ obras.obr_valor }} </h5>
+                                <h5 style="color:red;"> R$ {{ obras.obr_valor }} </h5>
                                 {% else %}
                                 <h5> Não Disponível </h5>
                                 {% endif %}
