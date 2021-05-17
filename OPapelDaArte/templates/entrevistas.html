@@ -20,7 +20,7 @@
 
                 {% for entrevista in noticias %}
                 <hr>
-                <a href="Entrevistas/{{ entrevista.id }}" class = "tecnicaImpressaoLink">
+                <a href="Entrevistas/{{ entrevista.id }}?pa={{ paginaAtualArt }}" class = "tecnicaImpressaoLink">
                     <div class="card mb-3">
                         <div class="row no-gutters">
                             <div class="col-sm-4 my-3" style="padding-left:10px;padding-right:10px;">
@@ -42,19 +42,19 @@
 
                     var primeiraPagina= function()
                     {
-                        window.location = "/Entrevistas?p=1";
+                        window.location = "/Entrevistas?pa="+auxArt+"&p=1";
                     }
                     var ultimaPagina= function(valor)
                     {
-                        window.location = "/Entrevistas?p="+valor;
+                        window.location = "/Entrevistas?pa="+auxArt+"&p="+valor;
                     }
                     var mudaPagina= function(valor)
                     {
                         aux = aux + valor
                         if ( aux > {{ nPaginas }} ) {
-                            window.location = "/Entrevistas?p="+{{ nPaginas }};
+                            window.location = "/Entrevistas?pa="+auxArt+"&p="+{{ nPaginas }};
                         } else {
-                            window.location = "/Entrevistas?p="+aux;
+                            window.location = "/Entrevistas?pa="+auxArt+"&p="+aux;
                         }
                     }
 

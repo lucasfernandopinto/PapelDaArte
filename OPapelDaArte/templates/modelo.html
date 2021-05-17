@@ -93,7 +93,7 @@
 
             <div id="artistas">
                 {% for artistas in artista %}
-                    <a href="/Artistas/{{ artistas.art_nome }}" class="list-group-item list-group-item-action">{{ artistas.art_nome }}</a>
+                    <a href="/Artistas/{{ artistas.art_nome }}?pa={{ paginaAtualArt }}" class="list-group-item list-group-item-action">{{ artistas.art_nome }}</a>
                 {% endfor %}
             </div>
         </div>
@@ -116,16 +116,16 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                     <li class="nav-item active">
-                        <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="/?pa={{ paginaAtualArt }}">Home <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/O-Papel-da-Arte">O Papel da Arte</a>
+                        <a class="nav-link" href="/O-Papel-da-Arte?pa={{ paginaAtualArt }}">O Papel da Arte</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Historia-da-Gravura">História da Gravura</a>
+                        <a class="nav-link" href="/Historia-da-Gravura?pa={{ paginaAtualArt }}">História da Gravura</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/Publicações">Artigos & Entrevistas</a>
+                        <a class="nav-link" href="/Publicações?pa={{ paginaAtualArt }}">Artigos & Entrevistas</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
@@ -133,9 +133,9 @@
                             Ver mais
                         </a>
                         <div id="drip" class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="/Julio-Reis">Julio Reis</a>
-                            <a class="dropdown-item" href="/Emolduramento-e-Restauracao">Emolduramento e Restauração</a>
-                            <a class="dropdown-item" href="/Tecnicas-de-Impressao">Técnicas de Impressão</a>
+                            <a class="dropdown-item" href="/Julio-Reis?pa={{ paginaAtualArt }}">Julio Reis</a>
+                            <a class="dropdown-item" href="/Emolduramento-e-Restauracao?pa={{ paginaAtualArt }}">Emolduramento e Restauração</a>
+                            <a class="dropdown-item" href="/Tecnicas-de-Impressao?pa={{ paginaAtualArt }}">Técnicas de Impressão</a>
                             <a class="dropdown-item" href="/admin">Painel Administrativo</a>
                         </div>
                     </li>
@@ -243,23 +243,46 @@
       });
   </script>
   <script>
-    auxArt = {{ paginaAtualArt }}
+    auxArt = {{ paginaAtualArt }};
+
+    aux = -1;
+
+    {% if paginaAtual %}
+        aux = {{ paginaAtual }};
+    {% endif %}
 
     var primeiraPaginaArt= function()
     {
-        window.location = window.location.pathname+"?pa=1";
+        if ( aux > -1 ) {
+            window.location = window.location.pathname+"?pa=1&p="+aux;
+        } else {
+            window.location = window.location.pathname+"?pa=1";
+        }
     }
     var ultimaPaginaArt= function(valor)
     {
-        window.location = window.location.pathname+"?pa="+valor;
+        if ( aux > -1 ) {
+            window.location = window.location.pathname+"?pa="+valor+"&p="+aux;
+        } else {
+            window.location = window.location.pathname+"?pa="+valor;
+        }
     }
     var mudaPaginaArt= function(valor)
     {
-        auxArt = auxArt + valor
-        if ( auxArt > {{ nPaginasArt }} ) {
-            window.location = window.location.pathname+"?pa="+{{ nPaginasArt }};
+        if ( aux > -1 ) {
+            auxArt = auxArt + valor
+            if ( auxArt > {{ nPaginasArt }} ) {
+                window.location = window.location.pathname+"?pa="+{{ nPaginasArt }}+"&p="+aux;
+            } else {
+                window.location = window.location.pathname+"?pa="+auxArt+"&p="+aux;
+            }
         } else {
-            window.location = window.location.pathname+"?pa="+auxArt;
+            auxArt = auxArt + valor
+            if ( auxArt > {{ nPaginasArt }} ) {
+                window.location = window.location.pathname+"?pa="+{{ nPaginasArt }};
+            } else {
+                window.location = window.location.pathname+"?pa="+auxArt;
+            }
         }
     }
 

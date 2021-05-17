@@ -7,7 +7,7 @@
           <div class="carousel-inner h-100" role="listbox">
             {% for obras in obras %}
             <div class="carousel-item {% if forloop.counter == 1 %}active{% endif %} h-100">
-              <a href="/Artistas/{{ obras.obr_artista }}">
+              <a href="/Artistas/{{ obras.obr_artista }}?pa={{ paginaAtualArt }}">
                 <img class="img-fluid" style="max-height:400px; max-width: 100%;"
                      src="{{ obras.obr_img.url }}"
                      alt="Obra {{ obras.obr_nome }} de {{ obras.obr_artista }}"

@@ -20,7 +20,7 @@
 
                 {% for artigo in noticias %}
                 <hr>
-                <a href="Artigos/{{ artigo.id }}"  class = "tecnicaImpressaoLink">
+                <a href="Artigos/{{ artigo.id }}?pa={{ paginaAtualArt }}"  class = "tecnicaImpressaoLink">
                     <div class="card mb-3">
                         <div class="row no-gutters">
                             <div class="col-sm-4 my-3" style="padding-left:10px;padding-right:10px;">
@@ -43,19 +43,19 @@
 
                     var primeiraPagina= function()
                     {
-                        window.location = "/Artigos?p=1";
+                        window.location = "/Artigos?pa="+auxArt+"&p=1";
                     }
                     var ultimaPagina= function(valor)
                     {
-                        window.location = "/Artigos?p="+valor;
+                        window.location = "/Artigos?pa="+auxArt+"&p="+valor;
                     }
                     var mudaPagina= function(valor)
                     {
                         aux = aux + valor
                         if ( aux > {{ nPaginas }} ) {
-                            window.location = "/Artigos?p="+{{ nPaginas }};
+                            window.location = "/Artigos?pa="+auxArt+"&p="+{{ nPaginas }};
                         } else {
-                            window.location = "/Artigos?p="+aux;
+                            window.location = "/Artigos?pa="+auxArt+"&p="+aux;
                         }
                     }
 
