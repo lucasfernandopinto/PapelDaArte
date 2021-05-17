@@ -56,6 +56,40 @@
                     </button>
                 </div>
             </div>
+            <small>
+                <div style="text-align: center;">
+                    <ul class="pagination">
+                        <li class="page-item">
+                            <a class="page-link" aria-label="Primeira" onclick="primeiraPaginaArt()">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Primeira</span>
+                            </a>
+                        </li>
+
+                        <li class="page-item">
+                            <a class="page-link" aria-label="Anterior" onclick="mudaPaginaArt(-1)">
+                                <span aria-hidden="true">&laquo;</span>
+                                <span class="sr-only">Anterior</span>
+                            </a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">{{ paginaAtualArt }}</a></li>
+
+                        <li class="page-item">
+                            <a class="page-link" aria-label="Próximo" onclick="mudaPaginaArt(1)">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Próximo</span>
+                            </a>
+                        </li>
+
+                        <li class="page-item">
+                            <a class="page-link" aria-label="Último" onclick="ultimaPaginaArt({{ nPaginasArt }})">
+                                <span aria-hidden="true">&raquo;</span>
+                                <span class="sr-only">Último</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </small>
 
             <div id="artistas">
                 {% for artistas in artista %}
@@ -208,6 +242,28 @@
             });
       });
   </script>
+  <script>
+    auxArt = {{ paginaAtualArt }}
+
+    var primeiraPaginaArt= function()
+    {
+        window.location = window.location.pathname+"?pa=1";
+    }
+    var ultimaPaginaArt= function(valor)
+    {
+        window.location = window.location.pathname+"?pa="+valor;
+    }
+    var mudaPaginaArt= function(valor)
+    {
+        auxArt = auxArt + valor
+        if ( auxArt > {{ nPaginasArt }} ) {
+            window.location = window.location.pathname+"?pa="+{{ nPaginasArt }};
+        } else {
+            window.location = window.location.pathname+"?pa="+auxArt;
+        }
+    }
+
+</script>
 
 </body>
 
